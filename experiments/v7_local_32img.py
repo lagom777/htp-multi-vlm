@@ -10,7 +10,9 @@ from datetime import datetime
 from collections import Counter, defaultdict
 from openai import OpenAI
 
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'framework'))
 import v6_voting_debate_4 as v6m
+from project_paths import IMAGE_DIR, LABEL_DIR
 
 HOST = "192.168.200.138"
 ENDPOINTS = {
@@ -54,9 +56,7 @@ TEST_IMAGES = [
     ("TL_여자사람", "여자사람_13_남_00009.jpg"),
 ]
 
-BASE_IMG = ("./"
-            "266.AI 기반 아동 미술심리 진단을 위한 그림 데이터 구축/"
-            "01-1.정식개방데이터/Training/01.원천데이터")
+BASE_IMG = str(IMAGE_DIR)
 TS_MAP = {"TL_나무": "TS_나무", "TL_집": "TS_집",
           "TL_남자사람": "TS_남자사람", "TL_여자사람": "TS_여자사람"}
 
@@ -164,10 +164,7 @@ def majority_vote(round_answers):
 
 
 def reload_gt(cat, img):
-    base = ("./"
-            "266.AI 기반 아동 미술심리 진단을 위한 그림 데이터 구축/"
-            "01-1.정식개방데이터/Training/02.라벨링데이터")
-    p = find_path(base, [cat, img.replace(".jpg", ".json")])
+    p = find_path(str(LABEL_DIR), [cat, img.replace(".jpg", ".json")])
     if not p:
         return {}
     with open(p) as f:
