@@ -2,7 +2,7 @@
 import os, json, base64, time, unicodedata, sys
 from datetime import datetime
 from collections import Counter, defaultdict
-sys.path.insert(0, '/Users/kg/nonmoon/htp_thesis')
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'framework'))
 import v6_voting_debate_4 as v6m
 import english_prompts as enp
 from common_utils import parse_json_v2
@@ -71,7 +71,7 @@ def main():
             all_results[f"{model}_{label}"] = {"per_img":per_img,
                 "acc":acc,"f1":f1,"recall":rec,"precision":prec,"pacc":pacc,"fp":tot['fp']}
 
-    with open(f"/Users/kg/nonmoon/htp_thesis/single_compare_{len(TEST)}img.json","w",encoding="utf-8") as f:
+    with open(f"./single_compare_{len(TEST)}img.json","w",encoding="utf-8") as f:
         json.dump(all_results, f, ensure_ascii=False, indent=2)
 
     # 최종 표

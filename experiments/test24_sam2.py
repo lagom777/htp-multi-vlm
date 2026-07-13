@@ -3,7 +3,7 @@ import os, json, time, sys, base64, subprocess, io
 from datetime import datetime
 from collections import Counter
 from PIL import Image, ImageDraw
-sys.path.insert(0, '/Users/kg/nonmoon/htp_thesis')
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'framework'))
 import v6_voting_debate_4 as v6m
 from common_utils import parse_json_v2
 import clean_prompts_v2 as cp2
@@ -12,7 +12,7 @@ from g_prime import (ENDPOINTS, BASE_IMG, BASE_LBL, TS_MAP, fp, load_gt, call_vl
 from sam2_subsegment import sam2_subsegment, crop_with_marker, call_qwen_with_b64, bbox_xywh_to_9region
 
 NAME = "SAM2-SubSegment-Clean"
-OUTFILE = "/Users/kg/nonmoon/htp_thesis/test24_sam2.json"
+OUTFILE = "./test24_sam2.json"
 
 
 def main():

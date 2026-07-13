@@ -5,7 +5,7 @@ Paper-Continuous framework: Voting + R2 (본 thesis v15 C 버전) + Bbox 추가
 import os, json, time, sys
 from datetime import datetime
 from collections import Counter, defaultdict
-sys.path.insert(0, '/Users/kg/nonmoon/htp_thesis')
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'framework'))
 import v6_voting_debate_4 as v6m
 from common_utils import parse_json_v2
 import clean_prompts_v2 as cp2
@@ -16,7 +16,7 @@ from test12_voting_judge import TEST_12
 
 IOU_THRESH = float(sys.argv[1]) if len(sys.argv) > 1 else 0.3
 NAME = f"Bbox+Voting+R2+Judge IoU={IOU_THRESH}"
-OUTFILE = f"/Users/kg/nonmoon/htp_thesis/test12_bbox_voting_r2_iou{IOU_THRESH}.json"
+OUTFILE = f"./test12_bbox_voting_r2_iou{IOU_THRESH}.json"
 
 
 def merge_with_iou(bbox_outs, iou_thresh):

@@ -315,7 +315,7 @@ CANONICAL = {
 # ============================================================
 def main():
     # 8장 선정 — 카테고리별 첫 2장
-    with open('/Users/kg/nonmoon/htp_thesis/v3_state_3vlm_distractor_16.json') as f:
+    with open('./v3_state_3vlm_distractor_16.json') as f:
         all_data = json.load(f)
 
     by_cat = defaultdict(list)
@@ -327,7 +327,7 @@ def main():
         selected.extend(by_cat[cat][:2])
 
     # GT region 라벨 (각 이미지)
-    GT_BASE = "/Users/kg/nonmoon/htp_thesis/266.AI 기반 아동 미술심리 진단을 위한 그림 데이터 구축/01-1.정식개방데이터/Training/02.라벨링데이터"
+    GT_BASE = "./data/02.라벨링데이터"
 
     results = []
     for item in selected:
@@ -382,7 +382,7 @@ def main():
         print(f'{m:8s} {rec:>14.1%}  {pacc:>14.1%}  {o["fp_hall"]/8:>14.2f}')
 
     # 상세 결과 저장
-    with open('/Users/kg/nonmoon/htp_thesis/eval_9region_8images_results.json', 'w') as f:
+    with open('./eval_9region_8images_results.json', 'w') as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
     print('\n상세 결과 → eval_9region_8images_results.json')
 

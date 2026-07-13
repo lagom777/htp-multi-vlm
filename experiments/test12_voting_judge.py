@@ -2,7 +2,7 @@
 import os, json, time, sys, base64
 from datetime import datetime
 from collections import Counter, defaultdict
-sys.path.insert(0, '/Users/kg/nonmoon/htp_thesis')
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'framework'))
 import v6_voting_debate_4 as v6m
 from common_utils import parse_json_v2
 import clean_prompts_v2 as cp2
@@ -10,7 +10,7 @@ from en_to_kr import normalize_en_to_kr
 from g_prime import (ENDPOINTS, BASE_IMG, BASE_LBL, TS_MAP, fp, load_gt, call_vlm)
 
 NAME = "Voting-R2-Judge-Clean"
-OUTFILE = "/Users/kg/nonmoon/htp_thesis/test12_voting.json"
+OUTFILE = "./test12_voting.json"
 
 # 12장 — 카테고리당 3장
 TEST_12 = [

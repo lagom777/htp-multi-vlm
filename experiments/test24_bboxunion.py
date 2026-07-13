@@ -2,7 +2,7 @@
 import os, json, time, sys
 from datetime import datetime
 from collections import Counter
-sys.path.insert(0, '/Users/kg/nonmoon/htp_thesis')
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'framework'))
 import v6_voting_debate_4 as v6m
 from common_utils import parse_json_v2
 import clean_prompts_v2 as cp2
@@ -13,7 +13,7 @@ from g_prime import (ENDPOINTS, BASE_IMG, BASE_LBL, TS_MAP, fp, load_gt, call_vl
 MODE = sys.argv[1] if len(sys.argv) > 1 else "simple"
 PROMPT_FN = cp2.make_bbox_simple_en if MODE == "simple" else cp2.make_bbox_sizehint_en
 NAME = f"BboxUnion-{MODE}"
-OUTFILE = f"/Users/kg/nonmoon/htp_thesis/test24_bboxunion_{MODE}.json"
+OUTFILE = f"./test24_bboxunion_{MODE}.json"
 
 
 def main():

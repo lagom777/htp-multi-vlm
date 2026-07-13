@@ -12,7 +12,7 @@ import os, json, base64, time, unicodedata, re, sys
 from datetime import datetime
 from collections import Counter, defaultdict
 from openai import OpenAI
-sys.path.insert(0, '/Users/kg/nonmoon/htp_thesis')
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import v6_voting_debate_4 as v6m
 
 HOST = "192.168.200.138"
@@ -31,8 +31,8 @@ TEST_IMAGES = [
     ("TL_여자사람","여자사람_10_남_02125.jpg"),
 ]
 
-BASE_IMG = "/Users/kg/nonmoon/htp_thesis/266.AI 기반 아동 미술심리 진단을 위한 그림 데이터 구축/01-1.정식개방데이터/Training/01.원천데이터"
-BASE_LBL = "/Users/kg/nonmoon/htp_thesis/266.AI 기반 아동 미술심리 진단을 위한 그림 데이터 구축/01-1.정식개방데이터/Training/02.라벨링데이터"
+BASE_IMG = os.environ.get("HTP266_IMG_DIR", "./data/01.원천데이터")  # AI Hub 266 원천데이터 경로
+BASE_LBL = os.environ.get("HTP266_LBL_DIR", "./data/02.라벨링데이터")  # AI Hub 266 라벨링데이터 경로
 TS_MAP = {"TL_나무":"TS_나무","TL_집":"TS_집","TL_남자사람":"TS_남자사람","TL_여자사람":"TS_여자사람"}
 
 
@@ -285,7 +285,7 @@ def main():
         results.append({"cat":cat,"img":img,"gt_n":gt_n,
                         "obj_ans":obj_ans,"pos_ans":pos_ans,"det_ans":det_ans,
                         "coordinator":c_parsed,"final":final,"eval":ev})
-        with open(f"/Users/kg/nonmoon/htp_thesis/a_aspect_orch-{ORCH}.json","w",encoding="utf-8") as f:
+        with open(f"./a_aspect_orch-{ORCH}.json","w",encoding="utf-8") as f:
             json.dump(results, f, ensure_ascii=False, indent=2)
 
     tot = Counter()

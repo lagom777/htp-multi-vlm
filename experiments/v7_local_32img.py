@@ -54,7 +54,7 @@ TEST_IMAGES = [
     ("TL_여자사람", "여자사람_13_남_00009.jpg"),
 ]
 
-BASE_IMG = ("/Users/kg/nonmoon/htp_thesis/"
+BASE_IMG = ("./"
             "266.AI 기반 아동 미술심리 진단을 위한 그림 데이터 구축/"
             "01-1.정식개방데이터/Training/01.원천데이터")
 TS_MAP = {"TL_나무": "TS_나무", "TL_집": "TS_집",
@@ -164,7 +164,7 @@ def majority_vote(round_answers):
 
 
 def reload_gt(cat, img):
-    base = ("/Users/kg/nonmoon/htp_thesis/"
+    base = ("./"
             "266.AI 기반 아동 미술심리 진단을 위한 그림 데이터 구축/"
             "01-1.정식개방데이터/Training/02.라벨링데이터")
     p = find_path(base, [cat, img.replace(".jpg", ".json")])
@@ -265,8 +265,8 @@ JSON 배열로만 답:
 
 def main():
     suffix = f"_{CAT_FILTER}_judge-{JUDGE_NAME}" if CAT_FILTER else f"_all_judge-{JUDGE_NAME}"
-    out_path = f"/Users/kg/nonmoon/htp_thesis/v7_local_state{suffix}.json"
-    log_path = f"/Users/kg/nonmoon/htp_thesis/v7_local_state{suffix}.log"
+    out_path = f"./v7_local_state{suffix}.json"
+    log_path = f"./v7_local_state{suffix}.log"
 
     print(f"=== v7 로컬 — {CAT_FILTER or 'ALL'} / Judge {JUDGE_NAME} ===")
     print(f"시작: {datetime.now().strftime('%H:%M:%S')}, 이미지 {len(TEST_IMAGES)}장")

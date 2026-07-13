@@ -14,7 +14,7 @@ from datetime import datetime
 from collections import Counter, defaultdict
 from openai import OpenAI
 
-sys.path.insert(0, '/Users/kg/nonmoon/htp_thesis')
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'framework'))
 import v6_voting_debate_4 as v6m
 from common_utils import parse_json_v2
 import english_prompts_v2 as enp2
@@ -23,7 +23,7 @@ from g_prime import (ENDPOINTS, TEST_IMAGES_FULL, BASE_IMG, BASE_LBL, TS_MAP,
                      fp, load_gt, call_vlm)
 from fullen_freeunion import eval_with_kr_mapping
 
-SAM2_VENV = "/Users/kg/nonmoon/htp_thesis/.venv_sam2/bin/python"
+SAM2_VENV = "python3"
 HOST = "192.168.200.138"
 
 
@@ -38,7 +38,7 @@ from PIL import Image
 device = "mps" if torch.backends.mps.is_available() else "cpu"
 sam2 = build_sam2(
     config_file="configs/sam2.1/sam2.1_hiera_b+.yaml",
-    ckpt_path="/Users/kg/nonmoon/htp_thesis/sam2_models/sam2.1_hiera_base_plus.pt",
+    ckpt_path="./sam2_models/sam2.1_hiera_base_plus.pt",
     device=device, apply_postprocessing=False,
 )
 mask_gen = SAM2AutomaticMaskGenerator(
@@ -204,7 +204,7 @@ What specific part is in the RED box? English single noun only.
         print(f"  📊 TP {ev['tp']}/{gt_n}, Acc {acc*100:.1f}%, F1 {f1*100:.1f}%, 위치 {pacc*100:.1f}%, 환각 {ev['fp']}", flush=True)
         results.append({"cat":cat,"img":img,"gt_n":gt_n,"all_labels":all_labels,
                         "final_en":final_en,"eval":ev})
-        with open(f"/Users/kg/nonmoon/htp_thesis/sam2_subsegment_{N}img.json","w",encoding="utf-8") as f:
+        with open(f"./sam2_subsegment_{N}img.json","w",encoding="utf-8") as f:
             json.dump(results, f, ensure_ascii=False, indent=2)
 
     tot = Counter()

@@ -2,8 +2,8 @@
 import os, json, re
 from datetime import datetime
 
-LOGS = "/Users/kg/nonmoon/htp_thesis/logs_planb"
-PROGRESS = "/Users/kg/nonmoon/htp_thesis/progress.md"
+LOGS = "./logs_planb"
+PROGRESS = "./progress.md"
 
 def extract_result(log_file):
     """log에서 마지막 결과 라인 추출."""

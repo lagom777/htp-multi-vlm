@@ -8,7 +8,7 @@ R2: 단독 답(1 모델만) 객체에 대해 다른 모델들에게 재확인.
 import os, json, time, sys
 from datetime import datetime
 from collections import Counter
-sys.path.insert(0, '/Users/kg/nonmoon/htp_thesis')
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'framework'))
 import v6_voting_debate_4 as v6m
 from common_utils import parse_json_v2
 import clean_prompts_v2 as cp2
@@ -18,7 +18,7 @@ from g_prime import (ENDPOINTS, BASE_IMG, BASE_LBL, TS_MAP, fp, load_gt, call_vl
                      iou, bbox_to_9region)
 
 NAME = "BboxUnion-R2-v6"
-OUTFILE = "/Users/kg/nonmoon/htp_thesis/test16_bboxunion_r2_v6.json"
+OUTFILE = "./test16_bboxunion_r2_v6.json"
 
 # 4 카테고리 × 4장 = 16장 (24장 셋의 앞 4장씩)
 TEST_16 = [

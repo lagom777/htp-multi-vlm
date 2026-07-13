@@ -506,8 +506,8 @@ def main():
     import sys
     suffix = sys.argv[1] if len(sys.argv) > 1 else ""
     suf = f"_{suffix}" if suffix else ""
-    out_path = f"/Users/kg/nonmoon/htp_thesis/v6_state_4{suf}.json"
-    log_path = f"/Users/kg/nonmoon/htp_thesis/v6_state_4{suf}.log"
+    out_path = f"./v6_state_4{suf}.json"
+    log_path = f"./v6_state_4{suf}.log"
 
     print(f"=== HTP v6 — Voting + Debate + Judge (C 버전) 4장 ===")
     print(f"시작: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")

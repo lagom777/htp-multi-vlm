@@ -6,7 +6,7 @@ import os, json, time, sys, base64, io
 from datetime import datetime
 from collections import Counter
 from PIL import Image
-sys.path.insert(0, '/Users/kg/nonmoon/htp_thesis')
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'framework'))
 import v6_voting_debate_4 as v6m
 from common_utils import parse_json_v2
 import clean_prompts_v2 as cp2
@@ -17,7 +17,7 @@ from test12_voting_judge import TEST_12
 from openai import OpenAI
 
 NAME = "BboxUnion+Zoom-R2+Judge"
-OUTFILE = "/Users/kg/nonmoon/htp_thesis/test12_zoom_r2.json"
+OUTFILE = "./test12_zoom_r2.json"
 
 
 def crop_bbox(img_path, bbox_1000, padding_px=30):

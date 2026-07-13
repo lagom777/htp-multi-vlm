@@ -5,7 +5,7 @@
 import os, json, time, sys
 from datetime import datetime
 from collections import Counter
-sys.path.insert(0, '/Users/kg/nonmoon/htp_thesis')
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'framework'))
 import v6_voting_debate_4 as v6m
 from common_utils import parse_json_v2
 import clean_prompts_v2 as cp2
@@ -15,7 +15,7 @@ from g_prime import (ENDPOINTS, BASE_IMG, BASE_LBL, TS_MAP, fp, load_gt, call_vl
 from test12_voting_judge import TEST_12
 
 NAME = "BboxUnion+MultiRegion-Text-R2+Judge"
-OUTFILE = "/Users/kg/nonmoon/htp_thesis/test12_multiregion_text.json"
+OUTFILE = "./test12_multiregion_text.json"
 
 
 def make_multiregion_text_prompt(cat, single_objects):

@@ -6,7 +6,7 @@ import os, json, base64, time, unicodedata, sys, subprocess
 from datetime import datetime
 from collections import Counter, defaultdict
 from openai import OpenAI
-sys.path.insert(0, '/Users/kg/nonmoon/htp_thesis')
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'framework'))
 import v6_voting_debate_4 as v6m
 from common_utils import parse_json_v2, get_bbox_prompt
 from g_prime import (ENDPOINTS, TEST_IMAGES_FULL, BASE_IMG, BASE_LBL, TS_MAP,
@@ -14,7 +14,7 @@ from g_prime import (ENDPOINTS, TEST_IMAGES_FULL, BASE_IMG, BASE_LBL, TS_MAP,
                      union_with_bbox_merge, eval_final)
 import english_prompts as enp
 
-SAM2_VENV = "/Users/kg/nonmoon/htp_thesis/.venv_sam2/bin/python"
+SAM2_VENV = "python3"
 
 
 def sam2_predict_bbox(img_path, bbox_orig):
@@ -29,7 +29,7 @@ from PIL import Image
 device = "mps" if torch.backends.mps.is_available() else "cpu"
 sam2 = build_sam2(
     config_file="configs/sam2.1/sam2.1_hiera_b+.yaml",
-    ckpt_path="/Users/kg/nonmoon/htp_thesis/sam2_models/sam2.1_hiera_base_plus.pt",
+    ckpt_path="./sam2_models/sam2.1_hiera_base_plus.pt",
     device=device, apply_postprocessing=False,
 )
 predictor = SAM2ImagePredictor(sam2)
@@ -168,7 +168,7 @@ def main():
         print(f"  📊 TP {ev['tp']}/{gt_n}, Acc {acc*100:.1f}%, F1 {f1*100:.1f}%, 위치 {pacc*100:.1f}%, 환각 {ev['fp']}", flush=True)
         results.append({"cat":cat,"img":img,"gt_n":gt_n,"bbox_outs":bbox_outs,
                         "merged":merged,"judge":j_parsed,"final":final,"eval":ev})
-        with open(f"/Users/kg/nonmoon/htp_thesis/kprime_orch-{ORCH}_{len(TEST)}img.json","w",encoding="utf-8") as f:
+        with open(f"./kprime_orch-{ORCH}_{len(TEST)}img.json","w",encoding="utf-8") as f:
             json.dump(results, f, ensure_ascii=False, indent=2)
 
     tot = Counter()

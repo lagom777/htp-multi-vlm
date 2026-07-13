@@ -2,6 +2,9 @@
 config.json
 # Data (AI Hub 266 — 재배포 금지, 직접 다운로드)
 266.AI*/
+data/
+outputs/
+sam2_models/
 *.jpg
 *.jpeg
 # Python

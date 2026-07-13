@@ -1,7 +1,8 @@
 """공통 utils — NFC normalize + 모델별 prompt 선택 + 객체 강조."""
 import json, re, unicodedata
 import sys
-sys.path.insert(0, '/Users/kg/nonmoon/htp_thesis')
+import os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import v6_voting_debate_4 as v6m
 import english_prompts as enp
 

@@ -1,6 +1,7 @@
 """Phase 2 — 새 prompt v6 (Caption-then-Detect 2-pass) × 4장 단일."""
 import sys, time
-sys.path.insert(0, '/Users/kg/nonmoon/htp_thesis')
+import os
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'framework'))
 from openai import OpenAI
 import v6_voting_debate_4 as v6m
 from common_utils import parse_json_v2

@@ -2,7 +2,7 @@
 import os, json, base64, time, unicodedata, sys
 from datetime import datetime
 from collections import Counter
-sys.path.insert(0, '/Users/kg/nonmoon/htp_thesis')
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'framework'))
 import v6_voting_debate_4 as v6m
 from common_utils import parse_json_v2
 import clean_prompts as cp
@@ -121,7 +121,7 @@ Position: top-left|top-center|top-right|middle-left|middle-center|middle-right|b
         print(f"  📊 TP {ev['tp']}/{gt_n}, Acc {acc*100:.1f}%, F1 {f1*100:.1f}%, 위치 {pacc*100:.1f}%, 환각 {ev['fp']}", flush=True)
         results.append({"cat":cat,"img":img,"gt_n":gt_n,"bbox_outs":bbox_outs,
                         "merged":merged,"judge":j_parsed,"final":final_norm,"eval":ev})
-        with open(f"/Users/kg/nonmoon/htp_thesis/clean_bboxunion_{JUDGE}_{N}img.json","w",encoding="utf-8") as f:
+        with open(f"./clean_bboxunion_{JUDGE}_{N}img.json","w",encoding="utf-8") as f:
             json.dump(results, f, ensure_ascii=False, indent=2)
 
     tot = Counter()

@@ -7,14 +7,14 @@ cooldown 15분 (시간 한계, Gemma는 26B로 발열 EXAONE 33B보다 적음).
 import os, sys, json, time
 from datetime import datetime
 from collections import Counter
-sys.path.insert(0, '/Users/kg/nonmoon/htp_thesis')
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from a_aspect import call_vlm, parse_json, load_gt, fp, BASE_IMG, TS_MAP, eval_final
 from test_64_files import TEST_64
 from plans_v2 import PLANS_V2 as PLANS
 
 CHUNK_SIZE = 16
 COOLDOWN_SEC = 15 * 60  # 15분 (시간 한계)
-OUTFILE = "/Users/kg/nonmoon/htp_thesis/test64_gemma_solo_chunked.json"
+OUTFILE = "./test64_gemma_solo_chunked.json"
 MODEL_KEY = "gemma"
 
 CAT_KR = {"TL_나무":"나무","TL_집":"집","TL_남자사람":"남자 사람","TL_여자사람":"여자 사람"}

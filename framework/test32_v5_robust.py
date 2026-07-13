@@ -7,14 +7,14 @@ robust_parse: 같은 객체명 1개(원 parse_r1 규칙) + 깨진 JSON도 정규
 import os, sys, json, time, re
 from datetime import datetime
 from collections import Counter, defaultdict
-sys.path.insert(0, '/Users/kg/nonmoon/htp_thesis')
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from a_aspect import call_vlm, load_gt, fp, BASE_IMG, TS_MAP
 from test_64_files import TEST_64
 import v6_voting_debate_4 as v6m
 from test64_v5 import (r1_prompt, judge_prompt, parse_r2, ev, ev_pos, bb9,
                        MODELS, JUDGE, POS_PRIORITY, summarize)
 
-OUTFILE = "/Users/kg/nonmoon/htp_thesis/test64_v5_lowspec.json"
+OUTFILE = "./test64_v5_lowspec.json"
 
 def robust_parse(raw):
     """3모델 형식 통일 파싱. 객체 블록 단위로 (이름,bbox) 추출 — 키이름/순서/오타/깨진괄호 무관.

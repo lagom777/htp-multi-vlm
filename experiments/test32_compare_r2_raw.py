@@ -2,7 +2,7 @@
 import os, sys, json, time
 from datetime import datetime
 from collections import Counter, defaultdict
-sys.path.insert(0, '/Users/kg/nonmoon/htp_thesis')
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'framework'))
 from a_aspect import call_vlm, parse_json, load_gt, fp, BASE_IMG, TS_MAP, eval_final
 from test_64_files import TEST_64
 import v6_voting_debate_4 as v6m
@@ -10,7 +10,7 @@ import v6_voting_debate_4 as v6m
 CAT_KR = {"TL_나무":"나무","TL_집":"집","TL_남자사람":"남자 사람","TL_여자사람":"여자 사람"}
 MODELS = ["qwen", "exaone", "gemma"]
 JUDGE_MODEL = "qwen"
-OUTFILE = "/Users/kg/nonmoon/htp_thesis/test32_compare_r2_raw.json"
+OUTFILE = "./test32_compare_r2_raw.json"
 CHUNK_SIZE = 16
 COOLDOWN_SEC = 20 * 60
 

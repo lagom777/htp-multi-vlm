@@ -9,20 +9,20 @@ chunk 16×4 + cooldown 15분(발열). resume 지원. bbox·raw 전부 저장.
 import os, sys, json, time
 from datetime import datetime
 from collections import Counter, defaultdict
-sys.path.insert(0, '/Users/kg/nonmoon/htp_thesis')
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from a_aspect import call_vlm, parse_json, load_gt, fp, BASE_IMG, TS_MAP
 from test_64_files import TEST_64
 import v6_voting_debate_4 as v6m
 
 # plans_v5_data.json(50개) 로드
-V5 = json.load(open("/Users/kg/nonmoon/htp_thesis/plans_v5_data.json"))
+V5 = json.load(open("./plans_v5_data.json"))
 PLANS = {c: ", ".join(d["gt"] + d["interp"] + d["distractor"]) for c, d in V5.items()}
 META  = {c: {"gt": d["gt"], "interp": d["interp"], "distractor": d["distractor"]} for c, d in V5.items()}
 
 MODELS = ["qwen", "exaone", "gemma"]
 JUDGE = "qwen"
 POS_PRIORITY = ["qwen", "exaone", "gemma"]
-OUTFILE = "/Users/kg/nonmoon/htp_thesis/test64_v5.json"
+OUTFILE = "./test64_v5.json"
 CAT_KR = {"TL_나무":"나무","TL_집":"집","TL_남자사람":"남자 사람","TL_여자사람":"여자 사람"}
 CHUNK = 16
 COOLDOWN = 0   # 연속 측정(휴식 없음)
