@@ -1,0 +1,11 @@
+# API keys
+config.json
+# Data (AI Hub 266 — 재배포 금지, 직접 다운로드)
+266.AI*/
+*.jpg
+*.jpeg
+# Python
+__pycache__/
+*.pyc
+.DS_Store
+*.log

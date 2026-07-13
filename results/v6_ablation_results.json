@@ -1,0 +1,5008 @@
+{
+  "summary": {
+    "1_single_gemini": {
+      "tp": 27,
+      "fn": 38,
+      "fp_hall": 2,
+      "pos_correct": 27,
+      "pos_total": 27,
+      "Recall": 0.4153846153846154,
+      "Precision": 0.9310344827586207,
+      "F1": 0.574468085106383,
+      "Pos9_Acc": 1.0
+    },
+    "2_single_gpt": {
+      "tp": 54,
+      "fn": 11,
+      "fp_hall": 7,
+      "pos_correct": 41,
+      "pos_total": 54,
+      "Recall": 0.8307692307692308,
+      "Precision": 0.8852459016393442,
+      "F1": 0.8571428571428572,
+      "Pos9_Acc": 0.7592592592592593
+    },
+    "3_single_claude": {
+      "tp": 49,
+      "fn": 16,
+      "fp_hall": 10,
+      "pos_correct": 42,
+      "pos_total": 49,
+      "Recall": 0.7538461538461538,
+      "Precision": 0.8305084745762712,
+      "F1": 0.7903225806451613,
+      "Pos9_Acc": 0.8571428571428571
+    },
+    "4_3vlm_voting": {
+      "tp": 51,
+      "fn": 14,
+      "fp_hall": 3,
+      "pos_correct": 42,
+      "pos_total": 51,
+      "Recall": 0.7846153846153846,
+      "Precision": 0.9444444444444444,
+      "F1": 0.857142857142857,
+      "Pos9_Acc": 0.8235294117647058
+    },
+    "5_v3_voting_judge": {
+      "tp": 58,
+      "fn": 7,
+      "fp_hall": 7,
+      "pos_correct": 49,
+      "pos_total": 58,
+      "Recall": 0.8923076923076924,
+      "Precision": 0.8923076923076924,
+      "F1": 0.8923076923076924,
+      "Pos9_Acc": 0.8448275862068966
+    },
+    "6_v6_voting_debate_judge": {
+      "tp": 58,
+      "fn": 7,
+      "fp_hall": 10,
+      "pos_correct": 48,
+      "pos_total": 58,
+      "Recall": 0.8923076923076924,
+      "Precision": 0.8529411764705882,
+      "F1": 0.8721804511278195,
+      "Pos9_Acc": 0.8275862068965517
+    }
+  },
+  "per_image": [
+    {
+      "category": "TL_나무",
+      "image": "나무_8_남_01445.jpg",
+      "gt_regions": {
+        "나무전체": [
+          "middle-center"
+        ],
+        "기둥": [
+          "middle-center"
+        ],
+        "수관": [
+          "top-center"
+        ],
+        "가지": [
+          "top-center"
+        ],
+        "뿌리": [
+          "bottom-center"
+        ],
+        "나뭇잎": [
+          "top-center"
+        ],
+        "꽃": [
+          "middle-left",
+          "middle-right"
+        ],
+        "열매": [
+          "top-left",
+          "top-center",
+          "top-center",
+          "top-center"
+        ],
+        "그네": [
+          "bottom-left"
+        ],
+        "새": [
+          "top-right"
+        ],
+        "다람쥐": [
+          "bottom-right"
+        ],
+        "구름": [
+          "top-left",
+          "top-right"
+        ],
+        "달": [
+          "top-left"
+        ],
+        "별": [
+          "top-right"
+        ]
+      },
+      "version_results": {
+        "1_single_gemini": {
+          "category": "TL_나무",
+          "image": "나무_8_남_01445.jpg",
+          "final": {
+            "기둥": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "수관": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "가지": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "열매": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "나뭇잎": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "구름": {
+              "판정": "있음",
+              "위치": "top-left",
+              "출처": "single"
+            },
+            "달": {
+              "판정": "있음",
+              "위치": "top-left",
+              "출처": "single"
+            },
+            "별": {
+              "판정": "있음",
+              "위치": "top-right",
+              "출처": "single"
+            },
+            "새": {
+              "판정": "있음",
+              "위치": "top-right",
+              "출처": "single"
+            },
+            "꽃": {
+              "판정": "있음",
+              "위치": "middle-left",
+              "출처": "single"
+            },
+            "그네": {
+              "판정": "있음",
+              "위치": "bottom-left",
+              "출처": "single"
+            },
+            "다람쥐": {
+              "판정": "있음",
+              "위치": "bottom-right",
+              "출처": "single"
+            },
+            "잔디": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "출처": "single"
+            }
+          },
+          "eval": {
+            "tp": 12,
+            "fn": 2,
+            "pos_correct": 12,
+            "pos_total": 12,
+            "fp_hall": 1,
+            "details": [
+              {
+                "obj": "나무전체",
+                "missed": true
+              },
+              {
+                "obj": "기둥",
+                "ok_pos": true
+              },
+              {
+                "obj": "수관",
+                "ok_pos": true
+              },
+              {
+                "obj": "가지",
+                "ok_pos": true
+              },
+              {
+                "obj": "뿌리",
+                "missed": true
+              },
+              {
+                "obj": "나뭇잎",
+                "ok_pos": true
+              },
+              {
+                "obj": "꽃",
+                "ok_pos": true
+              },
+              {
+                "obj": "열매",
+                "ok_pos": true
+              },
+              {
+                "obj": "그네",
+                "ok_pos": true
+              },
+              {
+                "obj": "새",
+                "ok_pos": true
+              },
+              {
+                "obj": "다람쥐",
+                "ok_pos": true
+              },
+              {
+                "obj": "구름",
+                "ok_pos": true
+              },
+              {
+                "obj": "달",
+                "ok_pos": true
+              },
+              {
+                "obj": "별",
+                "ok_pos": true
+              },
+              {
+                "obj": "잔디",
+                "halluc": true
+              }
+            ]
+          }
+        },
+        "2_single_gpt": {
+          "category": "TL_나무",
+          "image": "나무_8_남_01445.jpg",
+          "final": {
+            "수관": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "기둥": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "가지": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "열매": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "나뭇잎": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "구름": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "달": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "별": {
+              "판정": "있음",
+              "위치": "top-right",
+              "출처": "single"
+            },
+            "새": {
+              "판정": "있음",
+              "위치": "middle-right",
+              "출처": "single"
+            },
+            "꽃": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "의자": {
+              "판정": "있음",
+              "위치": "bottom-left",
+              "출처": "single"
+            },
+            "다람쥐": {
+              "판정": "있음",
+              "위치": "bottom-right",
+              "출처": "single"
+            },
+            "잔디": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "출처": "single"
+            }
+          },
+          "eval": {
+            "tp": 11,
+            "fn": 3,
+            "pos_correct": 7,
+            "pos_total": 11,
+            "fp_hall": 2,
+            "details": [
+              {
+                "obj": "나무전체",
+                "missed": true
+              },
+              {
+                "obj": "기둥",
+                "ok_pos": true
+              },
+              {
+                "obj": "수관",
+                "ok_pos": true
+              },
+              {
+                "obj": "가지",
+                "ok_pos": true
+              },
+              {
+                "obj": "뿌리",
+                "missed": true
+              },
+              {
+                "obj": "나뭇잎",
+                "ok_pos": true
+              },
+              {
+                "obj": "꽃",
+                "ok_pos": false,
+                "vlm": "middle-center",
+                "gt": [
+                  "middle-left",
+                  "middle-right"
+                ]
+              },
+              {
+                "obj": "열매",
+                "ok_pos": true
+              },
+              {
+                "obj": "그네",
+                "missed": true
+              },
+              {
+                "obj": "새",
+                "ok_pos": false,
+                "vlm": "middle-right",
+                "gt": [
+                  "top-right"
+                ]
+              },
+              {
+                "obj": "다람쥐",
+                "ok_pos": true
+              },
+              {
+                "obj": "구름",
+                "ok_pos": false,
+                "vlm": "top-center",
+                "gt": [
+                  "top-left",
+                  "top-right"
+                ]
+              },
+              {
+                "obj": "달",
+                "ok_pos": false,
+                "vlm": "top-center",
+                "gt": [
+                  "top-left"
+                ]
+              },
+              {
+                "obj": "별",
+                "ok_pos": true
+              },
+              {
+                "obj": "의자",
+                "halluc": true
+              },
+              {
+                "obj": "잔디",
+                "halluc": true
+              }
+            ]
+          }
+        },
+        "3_single_claude": {
+          "category": "TL_나무",
+          "image": "나무_8_남_01445.jpg",
+          "final": {
+            "수관": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "기둥": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "뿌리": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "출처": "single"
+            },
+            "나뭇잎": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "열매": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "눈": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "입": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "나무전체": {
+              "판정": "있음",
+              "위치": "middle-left",
+              "출처": "single"
+            },
+            "그네": {
+              "판정": "있음",
+              "위치": "bottom-left",
+              "출처": "single"
+            },
+            "곤충": {
+              "판정": "있음",
+              "위치": "middle-right",
+              "출처": "single"
+            },
+            "동물": {
+              "판정": "있음",
+              "위치": "bottom-right",
+              "출처": "single"
+            },
+            "구름": {
+              "판정": "있음",
+              "위치": "top-left",
+              "출처": "single"
+            },
+            "별": {
+              "판정": "있음",
+              "위치": "top-right",
+              "출처": "single"
+            },
+            "달": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "잔디": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "출처": "single"
+            }
+          },
+          "eval": {
+            "tp": 10,
+            "fn": 4,
+            "pos_correct": 8,
+            "pos_total": 10,
+            "fp_hall": 5,
+            "details": [
+              {
+                "obj": "나무전체",
+                "ok_pos": false,
+                "vlm": "middle-left",
+                "gt": [
+                  "middle-center"
+                ]
+              },
+              {
+                "obj": "기둥",
+                "ok_pos": true
+              },
+              {
+                "obj": "수관",
+                "ok_pos": true
+              },
+              {
+                "obj": "가지",
+                "missed": true
+              },
+              {
+                "obj": "뿌리",
+                "ok_pos": true
+              },
+              {
+                "obj": "나뭇잎",
+                "ok_pos": true
+              },
+              {
+                "obj": "꽃",
+                "missed": true
+              },
+              {
+                "obj": "열매",
+                "ok_pos": true
+              },
+              {
+                "obj": "그네",
+                "ok_pos": true
+              },
+              {
+                "obj": "새",
+                "missed": true
+              },
+              {
+                "obj": "다람쥐",
+                "missed": true
+              },
+              {
+                "obj": "구름",
+                "ok_pos": true
+              },
+              {
+                "obj": "달",
+                "ok_pos": false,
+                "vlm": "top-center",
+                "gt": [
+                  "top-left"
+                ]
+              },
+              {
+                "obj": "별",
+                "ok_pos": true
+              },
+              {
+                "obj": "눈",
+                "halluc": true
+              },
+              {
+                "obj": "입",
+                "halluc": true
+              },
+              {
+                "obj": "곤충",
+                "halluc": true
+              },
+              {
+                "obj": "동물",
+                "halluc": true
+              },
+              {
+                "obj": "잔디",
+                "halluc": true
+              }
+            ]
+          }
+        },
+        "4_3vlm_voting": {
+          "category": "TL_나무",
+          "image": "나무_8_남_01445.jpg",
+          "final": {
+            "기둥": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "수관": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "가지": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 2,
+              "참여_모델": [
+                "gemini",
+                "gpt"
+              ]
+            },
+            "열매": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "나뭇잎": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "구름": {
+              "판정": "있음",
+              "위치": "top-left",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "달": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "별": {
+              "판정": "있음",
+              "위치": "top-right",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "새": {
+              "판정": "있음",
+              "위치": "top-right",
+              "투표": 2,
+              "참여_모델": [
+                "gemini",
+                "gpt"
+              ]
+            },
+            "꽃": {
+              "판정": "있음",
+              "위치": "middle-left",
+              "투표": 2,
+              "참여_모델": [
+                "gemini",
+                "gpt"
+              ]
+            },
+            "그네": {
+              "판정": "있음",
+              "위치": "bottom-left",
+              "투표": 2,
+              "참여_모델": [
+                "gemini",
+                "claude"
+              ]
+            },
+            "다람쥐": {
+              "판정": "있음",
+              "위치": "bottom-right",
+              "투표": 2,
+              "참여_모델": [
+                "gemini",
+                "gpt"
+              ]
+            },
+            "잔디": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            }
+          },
+          "eval": {
+            "tp": 12,
+            "fn": 2,
+            "pos_correct": 11,
+            "pos_total": 12,
+            "fp_hall": 1,
+            "details": [
+              {
+                "obj": "나무전체",
+                "missed": true
+              },
+              {
+                "obj": "기둥",
+                "ok_pos": true
+              },
+              {
+                "obj": "수관",
+                "ok_pos": true
+              },
+              {
+                "obj": "가지",
+                "ok_pos": true
+              },
+              {
+                "obj": "뿌리",
+                "missed": true
+              },
+              {
+                "obj": "나뭇잎",
+                "ok_pos": true
+              },
+              {
+                "obj": "꽃",
+                "ok_pos": true
+              },
+              {
+                "obj": "열매",
+                "ok_pos": true
+              },
+              {
+                "obj": "그네",
+                "ok_pos": true
+              },
+              {
+                "obj": "새",
+                "ok_pos": true
+              },
+              {
+                "obj": "다람쥐",
+                "ok_pos": true
+              },
+              {
+                "obj": "구름",
+                "ok_pos": true
+              },
+              {
+                "obj": "달",
+                "ok_pos": false,
+                "vlm": "top-center",
+                "gt": [
+                  "top-left"
+                ]
+              },
+              {
+                "obj": "별",
+                "ok_pos": true
+              },
+              {
+                "obj": "잔디",
+                "halluc": true
+              }
+            ]
+          },
+          "consensus_n": 13,
+          "disagreed_n": 11
+        },
+        "5_v3_voting_judge": {
+          "category": "TL_나무",
+          "image": "나무_8_남_01445.jpg",
+          "final": {
+            "기둥": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "수관": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "가지": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 2,
+              "참여_모델": [
+                "gemini",
+                "gpt"
+              ]
+            },
+            "열매": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "나뭇잎": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "구름": {
+              "판정": "있음",
+              "위치": "top-left",
+              "출처": "judge_v3"
+            },
+            "달": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "judge_v3"
+            },
+            "별": {
+              "판정": "있음",
+              "위치": "top-right",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "새": {
+              "판정": "있음",
+              "위치": "top-right",
+              "출처": "judge_v3"
+            },
+            "꽃": {
+              "판정": "있음",
+              "위치": "middle-left",
+              "출처": "judge_v3"
+            },
+            "그네": {
+              "판정": "있음",
+              "위치": "bottom-left",
+              "투표": 2,
+              "참여_모델": [
+                "gemini",
+                "claude"
+              ]
+            },
+            "다람쥐": {
+              "판정": "있음",
+              "위치": "bottom-right",
+              "투표": 2,
+              "참여_모델": [
+                "gemini",
+                "gpt"
+              ]
+            },
+            "잔디": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "뿌리": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "출처": "judge_v3"
+            },
+            "나무전체": {
+              "판정": "있음",
+              "위치": "middle-left",
+              "출처": "judge_v3"
+            }
+          },
+          "eval": {
+            "tp": 14,
+            "fn": 0,
+            "pos_correct": 12,
+            "pos_total": 14,
+            "fp_hall": 1,
+            "details": [
+              {
+                "obj": "나무전체",
+                "ok_pos": false,
+                "vlm": "middle-left",
+                "gt": [
+                  "middle-center"
+                ]
+              },
+              {
+                "obj": "기둥",
+                "ok_pos": true
+              },
+              {
+                "obj": "수관",
+                "ok_pos": true
+              },
+              {
+                "obj": "가지",
+                "ok_pos": true
+              },
+              {
+                "obj": "뿌리",
+                "ok_pos": true
+              },
+              {
+                "obj": "나뭇잎",
+                "ok_pos": true
+              },
+              {
+                "obj": "꽃",
+                "ok_pos": true
+              },
+              {
+                "obj": "열매",
+                "ok_pos": true
+              },
+              {
+                "obj": "그네",
+                "ok_pos": true
+              },
+              {
+                "obj": "새",
+                "ok_pos": true
+              },
+              {
+                "obj": "다람쥐",
+                "ok_pos": true
+              },
+              {
+                "obj": "구름",
+                "ok_pos": true
+              },
+              {
+                "obj": "달",
+                "ok_pos": false,
+                "vlm": "top-center",
+                "gt": [
+                  "top-left"
+                ]
+              },
+              {
+                "obj": "별",
+                "ok_pos": true
+              },
+              {
+                "obj": "잔디",
+                "halluc": true
+              }
+            ]
+          },
+          "judge_added_n": 6
+        },
+        "6_v6_voting_debate_judge": {
+          "category": "TL_나무",
+          "image": "나무_8_남_01445.jpg",
+          "final": {
+            "기둥": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "수관": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "가지": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 2,
+              "참여_모델": [
+                "gemini",
+                "gpt"
+              ]
+            },
+            "열매": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "나뭇잎": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "구름": {
+              "판정": "있음",
+              "위치": "top-left",
+              "투표": 2,
+              "참여_모델": [
+                "gemini",
+                "claude"
+              ]
+            },
+            "달": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "judge_v6"
+            },
+            "별": {
+              "판정": "있음",
+              "위치": "top-right",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "새": {
+              "판정": "있음",
+              "위치": "middle-right",
+              "출처": "judge_v6"
+            },
+            "꽃": {
+              "판정": "있음",
+              "위치": "middle-left",
+              "출처": "judge_v6"
+            },
+            "그네": {
+              "판정": "있음",
+              "위치": "bottom-left",
+              "투표": 2,
+              "참여_모델": [
+                "gemini",
+                "claude"
+              ]
+            },
+            "다람쥐": {
+              "판정": "있음",
+              "위치": "bottom-right",
+              "투표": 2,
+              "참여_모델": [
+                "gemini",
+                "gpt"
+              ]
+            },
+            "잔디": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "나무전체": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "judge_v6"
+            },
+            "동물": {
+              "판정": "있음",
+              "위치": "bottom-right",
+              "투표": 2,
+              "참여_모델": [
+                "gemini",
+                "claude"
+              ]
+            }
+          },
+          "eval": {
+            "tp": 13,
+            "fn": 1,
+            "pos_correct": 11,
+            "pos_total": 13,
+            "fp_hall": 2,
+            "details": [
+              {
+                "obj": "나무전체",
+                "ok_pos": true
+              },
+              {
+                "obj": "기둥",
+                "ok_pos": true
+              },
+              {
+                "obj": "수관",
+                "ok_pos": true
+              },
+              {
+                "obj": "가지",
+                "ok_pos": true
+              },
+              {
+                "obj": "뿌리",
+                "missed": true
+              },
+              {
+                "obj": "나뭇잎",
+                "ok_pos": true
+              },
+              {
+                "obj": "꽃",
+                "ok_pos": true
+              },
+              {
+                "obj": "열매",
+                "ok_pos": true
+              },
+              {
+                "obj": "그네",
+                "ok_pos": true
+              },
+              {
+                "obj": "새",
+                "ok_pos": false,
+                "vlm": "middle-right",
+                "gt": [
+                  "top-right"
+                ]
+              },
+              {
+                "obj": "다람쥐",
+                "ok_pos": true
+              },
+              {
+                "obj": "구름",
+                "ok_pos": true
+              },
+              {
+                "obj": "달",
+                "ok_pos": false,
+                "vlm": "top-center",
+                "gt": [
+                  "top-left"
+                ]
+              },
+              {
+                "obj": "별",
+                "ok_pos": true
+              },
+              {
+                "obj": "잔디",
+                "halluc": true
+              },
+              {
+                "obj": "동물",
+                "halluc": true
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "category": "TL_집",
+      "image": "집_12_여_08971.jpg",
+      "gt_regions": {
+        "집전체": [
+          "middle-center"
+        ],
+        "지붕": [
+          "top-center"
+        ],
+        "집벽": [
+          "middle-center"
+        ],
+        "문": [
+          "middle-center"
+        ],
+        "창문": [
+          "middle-center"
+        ],
+        "굴뚝": [
+          "top-center"
+        ],
+        "연기": [
+          "top-center"
+        ],
+        "울타리": [
+          "bottom-center"
+        ],
+        "길": [
+          "middle-left"
+        ],
+        "연못": [
+          "middle-right"
+        ],
+        "산": [
+          "top-left",
+          "top-right"
+        ],
+        "나무전체": [
+          "middle-left"
+        ],
+        "꽃": [
+          "middle-left",
+          "middle-left"
+        ],
+        "잔디": [
+          "middle-left",
+          "middle-left",
+          "middle-left",
+          "bottom-right",
+          "middle-right",
+          "middle-right"
+        ],
+        "태양": [
+          "top-right"
+        ]
+      },
+      "version_results": {
+        "1_single_gemini": {
+          "category": "TL_집",
+          "image": "집_12_여_08971.jpg",
+          "final": {},
+          "eval": {
+            "tp": 0,
+            "fn": 15,
+            "pos_correct": 0,
+            "pos_total": 0,
+            "fp_hall": 0,
+            "details": [
+              {
+                "obj": "집전체",
+                "missed": true
+              },
+              {
+                "obj": "지붕",
+                "missed": true
+              },
+              {
+                "obj": "집벽",
+                "missed": true
+              },
+              {
+                "obj": "문",
+                "missed": true
+              },
+              {
+                "obj": "창문",
+                "missed": true
+              },
+              {
+                "obj": "굴뚝",
+                "missed": true
+              },
+              {
+                "obj": "연기",
+                "missed": true
+              },
+              {
+                "obj": "울타리",
+                "missed": true
+              },
+              {
+                "obj": "길",
+                "missed": true
+              },
+              {
+                "obj": "연못",
+                "missed": true
+              },
+              {
+                "obj": "산",
+                "missed": true
+              },
+              {
+                "obj": "나무전체",
+                "missed": true
+              },
+              {
+                "obj": "꽃",
+                "missed": true
+              },
+              {
+                "obj": "잔디",
+                "missed": true
+              },
+              {
+                "obj": "태양",
+                "missed": true
+              }
+            ]
+          }
+        },
+        "2_single_gpt": {
+          "category": "TL_집",
+          "image": "집_12_여_08971.jpg",
+          "final": {
+            "집전체": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "지붕": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "굴뚝": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "연기": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "창문": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "문": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "손잡이": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "산": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "태양": {
+              "판정": "있음",
+              "위치": "top-right",
+              "출처": "single"
+            },
+            "나무전체": {
+              "판정": "있음",
+              "위치": "bottom-left",
+              "출처": "single"
+            },
+            "꽃": {
+              "판정": "있음",
+              "위치": "bottom-left",
+              "출처": "single"
+            },
+            "울타리": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "출처": "single"
+            },
+            "연못": {
+              "판정": "있음",
+              "위치": "middle-left",
+              "출처": "single"
+            },
+            "덤불": {
+              "판정": "있음",
+              "위치": "middle-right",
+              "출처": "single"
+            },
+            "잔디": {
+              "판정": "있음",
+              "위치": "bottom-right",
+              "출처": "single"
+            }
+          },
+          "eval": {
+            "tp": 13,
+            "fn": 2,
+            "pos_correct": 9,
+            "pos_total": 13,
+            "fp_hall": 2,
+            "details": [
+              {
+                "obj": "집전체",
+                "ok_pos": true
+              },
+              {
+                "obj": "지붕",
+                "ok_pos": true
+              },
+              {
+                "obj": "집벽",
+                "missed": true
+              },
+              {
+                "obj": "문",
+                "ok_pos": true
+              },
+              {
+                "obj": "창문",
+                "ok_pos": true
+              },
+              {
+                "obj": "굴뚝",
+                "ok_pos": true
+              },
+              {
+                "obj": "연기",
+                "ok_pos": true
+              },
+              {
+                "obj": "울타리",
+                "ok_pos": true
+              },
+              {
+                "obj": "길",
+                "missed": true
+              },
+              {
+                "obj": "연못",
+                "ok_pos": false,
+                "vlm": "middle-left",
+                "gt": [
+                  "middle-right"
+                ]
+              },
+              {
+                "obj": "산",
+                "ok_pos": false,
+                "vlm": "top-center",
+                "gt": [
+                  "top-left",
+                  "top-right"
+                ]
+              },
+              {
+                "obj": "나무전체",
+                "ok_pos": false,
+                "vlm": "bottom-left",
+                "gt": [
+                  "middle-left"
+                ]
+              },
+              {
+                "obj": "꽃",
+                "ok_pos": false,
+                "vlm": "bottom-left",
+                "gt": [
+                  "middle-left",
+                  "middle-left"
+                ]
+              },
+              {
+                "obj": "잔디",
+                "ok_pos": true
+              },
+              {
+                "obj": "태양",
+                "ok_pos": true
+              },
+              {
+                "obj": "손잡이",
+                "halluc": true
+              },
+              {
+                "obj": "덤불",
+                "halluc": true
+              }
+            ]
+          }
+        },
+        "3_single_claude": {
+          "category": "TL_집",
+          "image": "집_12_여_08971.jpg",
+          "final": {
+            "집전체": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "지붕": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "굴뚝": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "연기": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "창문": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "문": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "산": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "태양": {
+              "판정": "있음",
+              "위치": "top-right",
+              "출처": "single"
+            },
+            "나무전체": {
+              "판정": "있음",
+              "위치": "middle-left",
+              "출처": "single"
+            },
+            "꽃": {
+              "판정": "있음",
+              "위치": "middle-left",
+              "출처": "single"
+            },
+            "울타리": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "출처": "single"
+            },
+            "둥근구조물": {
+              "판정": "있음",
+              "위치": "middle-right",
+              "출처": "single"
+            },
+            "잔디": {
+              "판정": "있음",
+              "위치": "bottom-right",
+              "출처": "single"
+            },
+            "바람선": {
+              "판정": "있음",
+              "위치": "middle-left",
+              "출처": "single"
+            }
+          },
+          "eval": {
+            "tp": 12,
+            "fn": 3,
+            "pos_correct": 11,
+            "pos_total": 12,
+            "fp_hall": 2,
+            "details": [
+              {
+                "obj": "집전체",
+                "ok_pos": true
+              },
+              {
+                "obj": "지붕",
+                "ok_pos": true
+              },
+              {
+                "obj": "집벽",
+                "missed": true
+              },
+              {
+                "obj": "문",
+                "ok_pos": true
+              },
+              {
+                "obj": "창문",
+                "ok_pos": true
+              },
+              {
+                "obj": "굴뚝",
+                "ok_pos": true
+              },
+              {
+                "obj": "연기",
+                "ok_pos": true
+              },
+              {
+                "obj": "울타리",
+                "ok_pos": true
+              },
+              {
+                "obj": "길",
+                "missed": true
+              },
+              {
+                "obj": "연못",
+                "missed": true
+              },
+              {
+                "obj": "산",
+                "ok_pos": false,
+                "vlm": "top-center",
+                "gt": [
+                  "top-left",
+                  "top-right"
+                ]
+              },
+              {
+                "obj": "나무전체",
+                "ok_pos": true
+              },
+              {
+                "obj": "꽃",
+                "ok_pos": true
+              },
+              {
+                "obj": "잔디",
+                "ok_pos": true
+              },
+              {
+                "obj": "태양",
+                "ok_pos": true
+              },
+              {
+                "obj": "둥근구조물",
+                "halluc": true
+              },
+              {
+                "obj": "바람선",
+                "halluc": true
+              }
+            ]
+          }
+        },
+        "4_3vlm_voting": {
+          "category": "TL_집",
+          "image": "집_12_여_08971.jpg",
+          "final": {
+            "집전체": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "지붕": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "굴뚝": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "연기": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "창문": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "문": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "산": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "태양": {
+              "판정": "있음",
+              "위치": "top-right",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "나무전체": {
+              "판정": "있음",
+              "위치": "bottom-left",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "꽃": {
+              "판정": "있음",
+              "위치": "bottom-left",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "울타리": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "잔디": {
+              "판정": "있음",
+              "위치": "bottom-right",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            }
+          },
+          "eval": {
+            "tp": 12,
+            "fn": 3,
+            "pos_correct": 9,
+            "pos_total": 12,
+            "fp_hall": 0,
+            "details": [
+              {
+                "obj": "집전체",
+                "ok_pos": true
+              },
+              {
+                "obj": "지붕",
+                "ok_pos": true
+              },
+              {
+                "obj": "집벽",
+                "missed": true
+              },
+              {
+                "obj": "문",
+                "ok_pos": true
+              },
+              {
+                "obj": "창문",
+                "ok_pos": true
+              },
+              {
+                "obj": "굴뚝",
+                "ok_pos": true
+              },
+              {
+                "obj": "연기",
+                "ok_pos": true
+              },
+              {
+                "obj": "울타리",
+                "ok_pos": true
+              },
+              {
+                "obj": "길",
+                "missed": true
+              },
+              {
+                "obj": "연못",
+                "missed": true
+              },
+              {
+                "obj": "산",
+                "ok_pos": false,
+                "vlm": "top-center",
+                "gt": [
+                  "top-left",
+                  "top-right"
+                ]
+              },
+              {
+                "obj": "나무전체",
+                "ok_pos": false,
+                "vlm": "bottom-left",
+                "gt": [
+                  "middle-left"
+                ]
+              },
+              {
+                "obj": "꽃",
+                "ok_pos": false,
+                "vlm": "bottom-left",
+                "gt": [
+                  "middle-left",
+                  "middle-left"
+                ]
+              },
+              {
+                "obj": "잔디",
+                "ok_pos": true
+              },
+              {
+                "obj": "태양",
+                "ok_pos": true
+              }
+            ]
+          },
+          "consensus_n": 12,
+          "disagreed_n": 8
+        },
+        "5_v3_voting_judge": {
+          "category": "TL_집",
+          "image": "집_12_여_08971.jpg",
+          "final": {
+            "집전체": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "지붕": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "굴뚝": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "연기": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "창문": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "문": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "산": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "judge_v3"
+            },
+            "태양": {
+              "판정": "있음",
+              "위치": "top-right",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "나무전체": {
+              "판정": "있음",
+              "위치": "middle-left",
+              "출처": "judge_v3"
+            },
+            "꽃": {
+              "판정": "있음",
+              "위치": "middle-left",
+              "출처": "judge_v3"
+            },
+            "울타리": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "잔디": {
+              "판정": "있음",
+              "위치": "bottom-right",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "손잡이": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "judge_v3"
+            },
+            "덤불": {
+              "판정": "있음",
+              "위치": "middle-right",
+              "출처": "judge_v3"
+            }
+          },
+          "eval": {
+            "tp": 12,
+            "fn": 3,
+            "pos_correct": 11,
+            "pos_total": 12,
+            "fp_hall": 2,
+            "details": [
+              {
+                "obj": "집전체",
+                "ok_pos": true
+              },
+              {
+                "obj": "지붕",
+                "ok_pos": true
+              },
+              {
+                "obj": "집벽",
+                "missed": true
+              },
+              {
+                "obj": "문",
+                "ok_pos": true
+              },
+              {
+                "obj": "창문",
+                "ok_pos": true
+              },
+              {
+                "obj": "굴뚝",
+                "ok_pos": true
+              },
+              {
+                "obj": "연기",
+                "ok_pos": true
+              },
+              {
+                "obj": "울타리",
+                "ok_pos": true
+              },
+              {
+                "obj": "길",
+                "missed": true
+              },
+              {
+                "obj": "연못",
+                "missed": true
+              },
+              {
+                "obj": "산",
+                "ok_pos": false,
+                "vlm": "top-center",
+                "gt": [
+                  "top-left",
+                  "top-right"
+                ]
+              },
+              {
+                "obj": "나무전체",
+                "ok_pos": true
+              },
+              {
+                "obj": "꽃",
+                "ok_pos": true
+              },
+              {
+                "obj": "잔디",
+                "ok_pos": true
+              },
+              {
+                "obj": "태양",
+                "ok_pos": true
+              },
+              {
+                "obj": "손잡이",
+                "halluc": true
+              },
+              {
+                "obj": "덤불",
+                "halluc": true
+              }
+            ]
+          },
+          "judge_added_n": 5
+        },
+        "6_v6_voting_debate_judge": {
+          "category": "TL_집",
+          "image": "집_12_여_08971.jpg",
+          "final": {
+            "집전체": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "지붕": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "굴뚝": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "연기": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "창문": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "문": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "산": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "태양": {
+              "판정": "있음",
+              "위치": "top-right",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "나무전체": {
+              "판정": "있음",
+              "위치": "bottom-left",
+              "출처": "judge_v6"
+            },
+            "꽃": {
+              "판정": "있음",
+              "위치": "bottom-left",
+              "출처": "judge_v6"
+            },
+            "울타리": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "잔디": {
+              "판정": "있음",
+              "위치": "bottom-right",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "손잡이": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "둥근구조물": {
+              "판정": "있음",
+              "위치": "middle-right",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "바람선": {
+              "판정": "있음",
+              "위치": "middle-left",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "연못": {
+              "판정": "있음",
+              "위치": "middle-left",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "덤불": {
+              "판정": "있음",
+              "위치": "middle-right",
+              "출처": "judge_v6"
+            }
+          },
+          "eval": {
+            "tp": 13,
+            "fn": 2,
+            "pos_correct": 9,
+            "pos_total": 13,
+            "fp_hall": 4,
+            "details": [
+              {
+                "obj": "집전체",
+                "ok_pos": true
+              },
+              {
+                "obj": "지붕",
+                "ok_pos": true
+              },
+              {
+                "obj": "집벽",
+                "missed": true
+              },
+              {
+                "obj": "문",
+                "ok_pos": true
+              },
+              {
+                "obj": "창문",
+                "ok_pos": true
+              },
+              {
+                "obj": "굴뚝",
+                "ok_pos": true
+              },
+              {
+                "obj": "연기",
+                "ok_pos": true
+              },
+              {
+                "obj": "울타리",
+                "ok_pos": true
+              },
+              {
+                "obj": "길",
+                "missed": true
+              },
+              {
+                "obj": "연못",
+                "ok_pos": false,
+                "vlm": "middle-left",
+                "gt": [
+                  "middle-right"
+                ]
+              },
+              {
+                "obj": "산",
+                "ok_pos": false,
+                "vlm": "top-center",
+                "gt": [
+                  "top-left",
+                  "top-right"
+                ]
+              },
+              {
+                "obj": "나무전체",
+                "ok_pos": false,
+                "vlm": "bottom-left",
+                "gt": [
+                  "middle-left"
+                ]
+              },
+              {
+                "obj": "꽃",
+                "ok_pos": false,
+                "vlm": "bottom-left",
+                "gt": [
+                  "middle-left",
+                  "middle-left"
+                ]
+              },
+              {
+                "obj": "잔디",
+                "ok_pos": true
+              },
+              {
+                "obj": "태양",
+                "ok_pos": true
+              },
+              {
+                "obj": "손잡이",
+                "halluc": true
+              },
+              {
+                "obj": "둥근구조물",
+                "halluc": true
+              },
+              {
+                "obj": "바람선",
+                "halluc": true
+              },
+              {
+                "obj": "덤불",
+                "halluc": true
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "category": "TL_남자사람",
+      "image": "남자사람_13_남_02804.jpg",
+      "gt_regions": {
+        "사람전체": [
+          "middle-center"
+        ],
+        "머리": [
+          "top-center"
+        ],
+        "얼굴": [
+          "top-center"
+        ],
+        "눈": [
+          "top-center",
+          "top-center"
+        ],
+        "코": [
+          "top-center"
+        ],
+        "입": [
+          "top-center"
+        ],
+        "귀": [
+          "top-center",
+          "top-center"
+        ],
+        "머리카락": [
+          "top-center"
+        ],
+        "목": [
+          "top-center"
+        ],
+        "상체": [
+          "middle-center"
+        ],
+        "팔": [
+          "middle-center",
+          "middle-center"
+        ],
+        "손": [
+          "middle-right",
+          "middle-left"
+        ],
+        "다리": [
+          "middle-center",
+          "middle-center"
+        ],
+        "발": [
+          "bottom-center",
+          "bottom-center"
+        ],
+        "단추": [
+          "middle-center"
+        ],
+        "주머니": [
+          "middle-center"
+        ],
+        "운동화": [
+          "bottom-left",
+          "bottom-left"
+        ],
+        "남자구두": [
+          "bottom-right",
+          "bottom-right"
+        ]
+      },
+      "version_results": {
+        "1_single_gemini": {
+          "category": "TL_남자사람",
+          "image": "남자사람_13_남_02804.jpg",
+          "final": {},
+          "eval": {
+            "tp": 0,
+            "fn": 18,
+            "pos_correct": 0,
+            "pos_total": 0,
+            "fp_hall": 0,
+            "details": [
+              {
+                "obj": "사람전체",
+                "missed": true
+              },
+              {
+                "obj": "머리",
+                "missed": true
+              },
+              {
+                "obj": "얼굴",
+                "missed": true
+              },
+              {
+                "obj": "눈",
+                "missed": true
+              },
+              {
+                "obj": "코",
+                "missed": true
+              },
+              {
+                "obj": "입",
+                "missed": true
+              },
+              {
+                "obj": "귀",
+                "missed": true
+              },
+              {
+                "obj": "머리카락",
+                "missed": true
+              },
+              {
+                "obj": "목",
+                "missed": true
+              },
+              {
+                "obj": "상체",
+                "missed": true
+              },
+              {
+                "obj": "팔",
+                "missed": true
+              },
+              {
+                "obj": "손",
+                "missed": true
+              },
+              {
+                "obj": "다리",
+                "missed": true
+              },
+              {
+                "obj": "발",
+                "missed": true
+              },
+              {
+                "obj": "단추",
+                "missed": true
+              },
+              {
+                "obj": "주머니",
+                "missed": true
+              },
+              {
+                "obj": "운동화",
+                "missed": true
+              },
+              {
+                "obj": "남자구두",
+                "missed": true
+              }
+            ]
+          }
+        },
+        "2_single_gpt": {
+          "category": "TL_남자사람",
+          "image": "남자사람_13_남_02804.jpg",
+          "final": {
+            "사람전체": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "머리": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "머리카락": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "눈": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "귀": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "코": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "입": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "목": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "상체": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "팔": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "손": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "단추": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "주머니": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "바지": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "출처": "single"
+            },
+            "다리": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "출처": "single"
+            },
+            "운동화": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "출처": "single"
+            }
+          },
+          "eval": {
+            "tp": 15,
+            "fn": 3,
+            "pos_correct": 11,
+            "pos_total": 15,
+            "fp_hall": 1,
+            "details": [
+              {
+                "obj": "사람전체",
+                "ok_pos": true
+              },
+              {
+                "obj": "머리",
+                "ok_pos": true
+              },
+              {
+                "obj": "얼굴",
+                "missed": true
+              },
+              {
+                "obj": "눈",
+                "ok_pos": true
+              },
+              {
+                "obj": "코",
+                "ok_pos": true
+              },
+              {
+                "obj": "입",
+                "ok_pos": true
+              },
+              {
+                "obj": "귀",
+                "ok_pos": true
+              },
+              {
+                "obj": "머리카락",
+                "ok_pos": true
+              },
+              {
+                "obj": "목",
+                "ok_pos": false,
+                "vlm": "middle-center",
+                "gt": [
+                  "top-center"
+                ]
+              },
+              {
+                "obj": "상체",
+                "ok_pos": true
+              },
+              {
+                "obj": "팔",
+                "ok_pos": true
+              },
+              {
+                "obj": "손",
+                "ok_pos": false,
+                "vlm": "middle-center",
+                "gt": [
+                  "middle-right",
+                  "middle-left"
+                ]
+              },
+              {
+                "obj": "다리",
+                "ok_pos": false,
+                "vlm": "bottom-center",
+                "gt": [
+                  "middle-center",
+                  "middle-center"
+                ]
+              },
+              {
+                "obj": "발",
+                "missed": true
+              },
+              {
+                "obj": "단추",
+                "ok_pos": true
+              },
+              {
+                "obj": "주머니",
+                "ok_pos": true
+              },
+              {
+                "obj": "운동화",
+                "ok_pos": false,
+                "vlm": "bottom-center",
+                "gt": [
+                  "bottom-left",
+                  "bottom-left"
+                ]
+              },
+              {
+                "obj": "남자구두",
+                "missed": true
+              },
+              {
+                "obj": "바지",
+                "halluc": true
+              }
+            ]
+          }
+        },
+        "3_single_claude": {
+          "category": "TL_남자사람",
+          "image": "남자사람_13_남_02804.jpg",
+          "final": {
+            "머리": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "머리카락": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "눈": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "귀": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "입": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "목": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "상체": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "팔": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "손": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "단추": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "주머니": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "바지": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "다리": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "출처": "single"
+            },
+            "운동화": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "출처": "single"
+            },
+            "지우개흔적": {
+              "판정": "있음",
+              "위치": "bottom-left",
+              "출처": "single"
+            }
+          },
+          "eval": {
+            "tp": 13,
+            "fn": 5,
+            "pos_correct": 10,
+            "pos_total": 13,
+            "fp_hall": 2,
+            "details": [
+              {
+                "obj": "사람전체",
+                "missed": true
+              },
+              {
+                "obj": "머리",
+                "ok_pos": true
+              },
+              {
+                "obj": "얼굴",
+                "missed": true
+              },
+              {
+                "obj": "눈",
+                "ok_pos": true
+              },
+              {
+                "obj": "코",
+                "missed": true
+              },
+              {
+                "obj": "입",
+                "ok_pos": true
+              },
+              {
+                "obj": "귀",
+                "ok_pos": true
+              },
+              {
+                "obj": "머리카락",
+                "ok_pos": true
+              },
+              {
+                "obj": "목",
+                "ok_pos": true
+              },
+              {
+                "obj": "상체",
+                "ok_pos": true
+              },
+              {
+                "obj": "팔",
+                "ok_pos": true
+              },
+              {
+                "obj": "손",
+                "ok_pos": false,
+                "vlm": "middle-center",
+                "gt": [
+                  "middle-right",
+                  "middle-left"
+                ]
+              },
+              {
+                "obj": "다리",
+                "ok_pos": false,
+                "vlm": "bottom-center",
+                "gt": [
+                  "middle-center",
+                  "middle-center"
+                ]
+              },
+              {
+                "obj": "발",
+                "missed": true
+              },
+              {
+                "obj": "단추",
+                "ok_pos": true
+              },
+              {
+                "obj": "주머니",
+                "ok_pos": true
+              },
+              {
+                "obj": "운동화",
+                "ok_pos": false,
+                "vlm": "bottom-center",
+                "gt": [
+                  "bottom-left",
+                  "bottom-left"
+                ]
+              },
+              {
+                "obj": "남자구두",
+                "missed": true
+              },
+              {
+                "obj": "바지",
+                "halluc": true
+              },
+              {
+                "obj": "지우개흔적",
+                "halluc": true
+              }
+            ]
+          }
+        },
+        "4_3vlm_voting": {
+          "category": "TL_남자사람",
+          "image": "남자사람_13_남_02804.jpg",
+          "final": {
+            "머리": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "머리카락": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "눈": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "귀": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "입": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "목": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "상체": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "팔": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "손": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "단추": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "주머니": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "바지": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "다리": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "운동화": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            }
+          },
+          "eval": {
+            "tp": 13,
+            "fn": 5,
+            "pos_correct": 9,
+            "pos_total": 13,
+            "fp_hall": 1,
+            "details": [
+              {
+                "obj": "사람전체",
+                "missed": true
+              },
+              {
+                "obj": "머리",
+                "ok_pos": true
+              },
+              {
+                "obj": "얼굴",
+                "missed": true
+              },
+              {
+                "obj": "눈",
+                "ok_pos": true
+              },
+              {
+                "obj": "코",
+                "missed": true
+              },
+              {
+                "obj": "입",
+                "ok_pos": true
+              },
+              {
+                "obj": "귀",
+                "ok_pos": true
+              },
+              {
+                "obj": "머리카락",
+                "ok_pos": true
+              },
+              {
+                "obj": "목",
+                "ok_pos": false,
+                "vlm": "middle-center",
+                "gt": [
+                  "top-center"
+                ]
+              },
+              {
+                "obj": "상체",
+                "ok_pos": true
+              },
+              {
+                "obj": "팔",
+                "ok_pos": true
+              },
+              {
+                "obj": "손",
+                "ok_pos": false,
+                "vlm": "middle-center",
+                "gt": [
+                  "middle-right",
+                  "middle-left"
+                ]
+              },
+              {
+                "obj": "다리",
+                "ok_pos": false,
+                "vlm": "bottom-center",
+                "gt": [
+                  "middle-center",
+                  "middle-center"
+                ]
+              },
+              {
+                "obj": "발",
+                "missed": true
+              },
+              {
+                "obj": "단추",
+                "ok_pos": true
+              },
+              {
+                "obj": "주머니",
+                "ok_pos": true
+              },
+              {
+                "obj": "운동화",
+                "ok_pos": false,
+                "vlm": "bottom-center",
+                "gt": [
+                  "bottom-left",
+                  "bottom-left"
+                ]
+              },
+              {
+                "obj": "남자구두",
+                "missed": true
+              },
+              {
+                "obj": "바지",
+                "halluc": true
+              }
+            ]
+          },
+          "consensus_n": 14,
+          "disagreed_n": 5
+        },
+        "5_v3_voting_judge": {
+          "category": "TL_남자사람",
+          "image": "남자사람_13_남_02804.jpg",
+          "final": {
+            "머리": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "머리카락": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "눈": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "귀": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "입": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "목": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "judge_v3"
+            },
+            "상체": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "팔": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "손": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "단추": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "주머니": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "바지": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "출처": "judge_v3"
+            },
+            "다리": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "운동화": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "사람전체": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "judge_v3"
+            },
+            "코": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "judge_v3"
+            },
+            "지우개흔적": {
+              "판정": "있음",
+              "위치": "bottom-left",
+              "출처": "judge_v3"
+            }
+          },
+          "eval": {
+            "tp": 15,
+            "fn": 3,
+            "pos_correct": 11,
+            "pos_total": 15,
+            "fp_hall": 2,
+            "details": [
+              {
+                "obj": "사람전체",
+                "ok_pos": true
+              },
+              {
+                "obj": "머리",
+                "ok_pos": true
+              },
+              {
+                "obj": "얼굴",
+                "missed": true
+              },
+              {
+                "obj": "눈",
+                "ok_pos": true
+              },
+              {
+                "obj": "코",
+                "ok_pos": true
+              },
+              {
+                "obj": "입",
+                "ok_pos": true
+              },
+              {
+                "obj": "귀",
+                "ok_pos": true
+              },
+              {
+                "obj": "머리카락",
+                "ok_pos": true
+              },
+              {
+                "obj": "목",
+                "ok_pos": false,
+                "vlm": "middle-center",
+                "gt": [
+                  "top-center"
+                ]
+              },
+              {
+                "obj": "상체",
+                "ok_pos": true
+              },
+              {
+                "obj": "팔",
+                "ok_pos": true
+              },
+              {
+                "obj": "손",
+                "ok_pos": false,
+                "vlm": "middle-center",
+                "gt": [
+                  "middle-right",
+                  "middle-left"
+                ]
+              },
+              {
+                "obj": "다리",
+                "ok_pos": false,
+                "vlm": "bottom-center",
+                "gt": [
+                  "middle-center",
+                  "middle-center"
+                ]
+              },
+              {
+                "obj": "발",
+                "missed": true
+              },
+              {
+                "obj": "단추",
+                "ok_pos": true
+              },
+              {
+                "obj": "주머니",
+                "ok_pos": true
+              },
+              {
+                "obj": "운동화",
+                "ok_pos": false,
+                "vlm": "bottom-center",
+                "gt": [
+                  "bottom-left",
+                  "bottom-left"
+                ]
+              },
+              {
+                "obj": "남자구두",
+                "missed": true
+              },
+              {
+                "obj": "바지",
+                "halluc": true
+              },
+              {
+                "obj": "지우개흔적",
+                "halluc": true
+              }
+            ]
+          },
+          "judge_added_n": 5
+        },
+        "6_v6_voting_debate_judge": {
+          "category": "TL_남자사람",
+          "image": "남자사람_13_남_02804.jpg",
+          "final": {
+            "머리": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "머리카락": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "눈": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "귀": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "입": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "목": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "judge_v6"
+            },
+            "상체": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "팔": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "손": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "단추": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "주머니": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "바지": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "다리": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "운동화": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "사람전체": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "코": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "지우개흔적": {
+              "판정": "있음",
+              "위치": "bottom-left",
+              "출처": "judge_v6"
+            }
+          },
+          "eval": {
+            "tp": 15,
+            "fn": 3,
+            "pos_correct": 12,
+            "pos_total": 15,
+            "fp_hall": 2,
+            "details": [
+              {
+                "obj": "사람전체",
+                "ok_pos": true
+              },
+              {
+                "obj": "머리",
+                "ok_pos": true
+              },
+              {
+                "obj": "얼굴",
+                "missed": true
+              },
+              {
+                "obj": "눈",
+                "ok_pos": true
+              },
+              {
+                "obj": "코",
+                "ok_pos": true
+              },
+              {
+                "obj": "입",
+                "ok_pos": true
+              },
+              {
+                "obj": "귀",
+                "ok_pos": true
+              },
+              {
+                "obj": "머리카락",
+                "ok_pos": true
+              },
+              {
+                "obj": "목",
+                "ok_pos": true
+              },
+              {
+                "obj": "상체",
+                "ok_pos": true
+              },
+              {
+                "obj": "팔",
+                "ok_pos": true
+              },
+              {
+                "obj": "손",
+                "ok_pos": false,
+                "vlm": "middle-center",
+                "gt": [
+                  "middle-right",
+                  "middle-left"
+                ]
+              },
+              {
+                "obj": "다리",
+                "ok_pos": false,
+                "vlm": "bottom-center",
+                "gt": [
+                  "middle-center",
+                  "middle-center"
+                ]
+              },
+              {
+                "obj": "발",
+                "missed": true
+              },
+              {
+                "obj": "단추",
+                "ok_pos": true
+              },
+              {
+                "obj": "주머니",
+                "ok_pos": true
+              },
+              {
+                "obj": "운동화",
+                "ok_pos": false,
+                "vlm": "bottom-center",
+                "gt": [
+                  "bottom-left",
+                  "bottom-left"
+                ]
+              },
+              {
+                "obj": "남자구두",
+                "missed": true
+              },
+              {
+                "obj": "바지",
+                "halluc": true
+              },
+              {
+                "obj": "지우개흔적",
+                "halluc": true
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "category": "TL_여자사람",
+      "image": "여자사람_10_남_02125.jpg",
+      "gt_regions": {
+        "사람전체": [
+          "middle-center"
+        ],
+        "머리": [
+          "top-center"
+        ],
+        "얼굴": [
+          "top-center"
+        ],
+        "눈": [
+          "top-center",
+          "top-center"
+        ],
+        "코": [
+          "top-center"
+        ],
+        "입": [
+          "top-center"
+        ],
+        "귀": [
+          "top-center",
+          "top-center"
+        ],
+        "머리카락": [
+          "top-center"
+        ],
+        "목": [
+          "top-center"
+        ],
+        "상체": [
+          "middle-center"
+        ],
+        "팔": [
+          "middle-center",
+          "middle-center"
+        ],
+        "손": [
+          "middle-center",
+          "middle-right"
+        ],
+        "다리": [
+          "middle-center",
+          "middle-center"
+        ],
+        "발": [
+          "middle-center",
+          "middle-center"
+        ],
+        "단추": [
+          "middle-center"
+        ],
+        "주머니": [
+          "middle-center",
+          "middle-center"
+        ],
+        "운동화": [
+          "bottom-center",
+          "bottom-center"
+        ],
+        "여자구두": [
+          "bottom-center",
+          "bottom-center"
+        ]
+      },
+      "version_results": {
+        "1_single_gemini": {
+          "category": "TL_여자사람",
+          "image": "여자사람_10_남_02125.jpg",
+          "final": {
+            "머리카락": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "얼굴": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "눈": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "코": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "입": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "귀": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "목": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "상체": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "단추": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "팔": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "손": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "바지": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "주머니": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "다리": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "발": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "운동화": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "출처": "single"
+            }
+          },
+          "eval": {
+            "tp": 15,
+            "fn": 3,
+            "pos_correct": 15,
+            "pos_total": 15,
+            "fp_hall": 1,
+            "details": [
+              {
+                "obj": "사람전체",
+                "missed": true
+              },
+              {
+                "obj": "머리",
+                "missed": true
+              },
+              {
+                "obj": "얼굴",
+                "ok_pos": true
+              },
+              {
+                "obj": "눈",
+                "ok_pos": true
+              },
+              {
+                "obj": "코",
+                "ok_pos": true
+              },
+              {
+                "obj": "입",
+                "ok_pos": true
+              },
+              {
+                "obj": "귀",
+                "ok_pos": true
+              },
+              {
+                "obj": "머리카락",
+                "ok_pos": true
+              },
+              {
+                "obj": "목",
+                "ok_pos": true
+              },
+              {
+                "obj": "상체",
+                "ok_pos": true
+              },
+              {
+                "obj": "팔",
+                "ok_pos": true
+              },
+              {
+                "obj": "손",
+                "ok_pos": true
+              },
+              {
+                "obj": "다리",
+                "ok_pos": true
+              },
+              {
+                "obj": "발",
+                "ok_pos": true
+              },
+              {
+                "obj": "단추",
+                "ok_pos": true
+              },
+              {
+                "obj": "주머니",
+                "ok_pos": true
+              },
+              {
+                "obj": "운동화",
+                "ok_pos": true
+              },
+              {
+                "obj": "여자구두",
+                "missed": true
+              },
+              {
+                "obj": "바지",
+                "halluc": true
+              }
+            ]
+          }
+        },
+        "2_single_gpt": {
+          "category": "TL_여자사람",
+          "image": "여자사람_10_남_02125.jpg",
+          "final": {
+            "사람전체": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "머리": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "머리카락": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "눈": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "코": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "입": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "귀": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "목": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "상체": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "단추": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "팔": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "손": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "바지": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "주머니": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "다리": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "운동화": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "출처": "single"
+            },
+            "끈": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "출처": "single"
+            }
+          },
+          "eval": {
+            "tp": 15,
+            "fn": 3,
+            "pos_correct": 14,
+            "pos_total": 15,
+            "fp_hall": 2,
+            "details": [
+              {
+                "obj": "사람전체",
+                "ok_pos": true
+              },
+              {
+                "obj": "머리",
+                "ok_pos": true
+              },
+              {
+                "obj": "얼굴",
+                "missed": true
+              },
+              {
+                "obj": "눈",
+                "ok_pos": true
+              },
+              {
+                "obj": "코",
+                "ok_pos": true
+              },
+              {
+                "obj": "입",
+                "ok_pos": true
+              },
+              {
+                "obj": "귀",
+                "ok_pos": true
+              },
+              {
+                "obj": "머리카락",
+                "ok_pos": true
+              },
+              {
+                "obj": "목",
+                "ok_pos": false,
+                "vlm": "middle-center",
+                "gt": [
+                  "top-center"
+                ]
+              },
+              {
+                "obj": "상체",
+                "ok_pos": true
+              },
+              {
+                "obj": "팔",
+                "ok_pos": true
+              },
+              {
+                "obj": "손",
+                "ok_pos": true
+              },
+              {
+                "obj": "다리",
+                "ok_pos": true
+              },
+              {
+                "obj": "발",
+                "missed": true
+              },
+              {
+                "obj": "단추",
+                "ok_pos": true
+              },
+              {
+                "obj": "주머니",
+                "ok_pos": true
+              },
+              {
+                "obj": "운동화",
+                "ok_pos": true
+              },
+              {
+                "obj": "여자구두",
+                "missed": true
+              },
+              {
+                "obj": "바지",
+                "halluc": true
+              },
+              {
+                "obj": "끈",
+                "halluc": true
+              }
+            ]
+          }
+        },
+        "3_single_claude": {
+          "category": "TL_여자사람",
+          "image": "여자사람_10_남_02125.jpg",
+          "final": {
+            "머리": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "머리카락": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "눈": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "코": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "입": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "귀": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "single"
+            },
+            "목": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "상체": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "단추": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "팔": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "손": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "바지": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "주머니": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "다리": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "single"
+            },
+            "운동화": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "출처": "single"
+            }
+          },
+          "eval": {
+            "tp": 14,
+            "fn": 4,
+            "pos_correct": 13,
+            "pos_total": 14,
+            "fp_hall": 1,
+            "details": [
+              {
+                "obj": "사람전체",
+                "missed": true
+              },
+              {
+                "obj": "머리",
+                "ok_pos": true
+              },
+              {
+                "obj": "얼굴",
+                "missed": true
+              },
+              {
+                "obj": "눈",
+                "ok_pos": true
+              },
+              {
+                "obj": "코",
+                "ok_pos": true
+              },
+              {
+                "obj": "입",
+                "ok_pos": true
+              },
+              {
+                "obj": "귀",
+                "ok_pos": true
+              },
+              {
+                "obj": "머리카락",
+                "ok_pos": true
+              },
+              {
+                "obj": "목",
+                "ok_pos": false,
+                "vlm": "middle-center",
+                "gt": [
+                  "top-center"
+                ]
+              },
+              {
+                "obj": "상체",
+                "ok_pos": true
+              },
+              {
+                "obj": "팔",
+                "ok_pos": true
+              },
+              {
+                "obj": "손",
+                "ok_pos": true
+              },
+              {
+                "obj": "다리",
+                "ok_pos": true
+              },
+              {
+                "obj": "발",
+                "missed": true
+              },
+              {
+                "obj": "단추",
+                "ok_pos": true
+              },
+              {
+                "obj": "주머니",
+                "ok_pos": true
+              },
+              {
+                "obj": "운동화",
+                "ok_pos": true
+              },
+              {
+                "obj": "여자구두",
+                "missed": true
+              },
+              {
+                "obj": "바지",
+                "halluc": true
+              }
+            ]
+          }
+        },
+        "4_3vlm_voting": {
+          "category": "TL_여자사람",
+          "image": "여자사람_10_남_02125.jpg",
+          "final": {
+            "머리카락": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "눈": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "코": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "입": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "귀": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "목": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "상체": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "단추": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "팔": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "손": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "바지": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "주머니": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "다리": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "운동화": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "머리": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            }
+          },
+          "eval": {
+            "tp": 14,
+            "fn": 4,
+            "pos_correct": 13,
+            "pos_total": 14,
+            "fp_hall": 1,
+            "details": [
+              {
+                "obj": "사람전체",
+                "missed": true
+              },
+              {
+                "obj": "머리",
+                "ok_pos": true
+              },
+              {
+                "obj": "얼굴",
+                "missed": true
+              },
+              {
+                "obj": "눈",
+                "ok_pos": true
+              },
+              {
+                "obj": "코",
+                "ok_pos": true
+              },
+              {
+                "obj": "입",
+                "ok_pos": true
+              },
+              {
+                "obj": "귀",
+                "ok_pos": true
+              },
+              {
+                "obj": "머리카락",
+                "ok_pos": true
+              },
+              {
+                "obj": "목",
+                "ok_pos": false,
+                "vlm": "middle-center",
+                "gt": [
+                  "top-center"
+                ]
+              },
+              {
+                "obj": "상체",
+                "ok_pos": true
+              },
+              {
+                "obj": "팔",
+                "ok_pos": true
+              },
+              {
+                "obj": "손",
+                "ok_pos": true
+              },
+              {
+                "obj": "다리",
+                "ok_pos": true
+              },
+              {
+                "obj": "발",
+                "missed": true
+              },
+              {
+                "obj": "단추",
+                "ok_pos": true
+              },
+              {
+                "obj": "주머니",
+                "ok_pos": true
+              },
+              {
+                "obj": "운동화",
+                "ok_pos": true
+              },
+              {
+                "obj": "여자구두",
+                "missed": true
+              },
+              {
+                "obj": "바지",
+                "halluc": true
+              }
+            ]
+          },
+          "consensus_n": 15,
+          "disagreed_n": 5
+        },
+        "5_v3_voting_judge": {
+          "category": "TL_여자사람",
+          "image": "여자사람_10_남_02125.jpg",
+          "final": {
+            "머리카락": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "눈": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "코": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "입": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "귀": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "목": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "judge_v3"
+            },
+            "상체": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "단추": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "팔": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "손": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "바지": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "주머니": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "다리": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "운동화": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "머리": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "얼굴": {
+              "판정": "있음",
+              "위치": "top-center",
+              "출처": "judge_v3"
+            },
+            "발": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "출처": "judge_v3"
+            },
+            "사람전체": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "judge_v3"
+            },
+            "끈": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "출처": "judge_v3"
+            }
+          },
+          "eval": {
+            "tp": 17,
+            "fn": 1,
+            "pos_correct": 15,
+            "pos_total": 17,
+            "fp_hall": 2,
+            "details": [
+              {
+                "obj": "사람전체",
+                "ok_pos": true
+              },
+              {
+                "obj": "머리",
+                "ok_pos": true
+              },
+              {
+                "obj": "얼굴",
+                "ok_pos": true
+              },
+              {
+                "obj": "눈",
+                "ok_pos": true
+              },
+              {
+                "obj": "코",
+                "ok_pos": true
+              },
+              {
+                "obj": "입",
+                "ok_pos": true
+              },
+              {
+                "obj": "귀",
+                "ok_pos": true
+              },
+              {
+                "obj": "머리카락",
+                "ok_pos": true
+              },
+              {
+                "obj": "목",
+                "ok_pos": false,
+                "vlm": "middle-center",
+                "gt": [
+                  "top-center"
+                ]
+              },
+              {
+                "obj": "상체",
+                "ok_pos": true
+              },
+              {
+                "obj": "팔",
+                "ok_pos": true
+              },
+              {
+                "obj": "손",
+                "ok_pos": true
+              },
+              {
+                "obj": "다리",
+                "ok_pos": true
+              },
+              {
+                "obj": "발",
+                "ok_pos": false,
+                "vlm": "bottom-center",
+                "gt": [
+                  "middle-center",
+                  "middle-center"
+                ]
+              },
+              {
+                "obj": "단추",
+                "ok_pos": true
+              },
+              {
+                "obj": "주머니",
+                "ok_pos": true
+              },
+              {
+                "obj": "운동화",
+                "ok_pos": true
+              },
+              {
+                "obj": "여자구두",
+                "missed": true
+              },
+              {
+                "obj": "바지",
+                "halluc": true
+              },
+              {
+                "obj": "끈",
+                "halluc": true
+              }
+            ]
+          },
+          "judge_added_n": 5
+        },
+        "6_v6_voting_debate_judge": {
+          "category": "TL_여자사람",
+          "image": "여자사람_10_남_02125.jpg",
+          "final": {
+            "머리카락": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "눈": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "코": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "입": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "귀": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "목": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "출처": "judge_v6"
+            },
+            "상체": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "단추": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "팔": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "손": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "바지": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "주머니": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "다리": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "운동화": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "머리": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 2,
+              "참여_모델": [
+                "gpt",
+                "claude"
+              ]
+            },
+            "얼굴": {
+              "판정": "있음",
+              "위치": "top-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "발": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "사람전체": {
+              "판정": "있음",
+              "위치": "middle-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            },
+            "끈": {
+              "판정": "있음",
+              "위치": "bottom-center",
+              "투표": 3,
+              "참여_모델": [
+                "gemini",
+                "gpt",
+                "claude"
+              ]
+            }
+          },
+          "eval": {
+            "tp": 17,
+            "fn": 1,
+            "pos_correct": 16,
+            "pos_total": 17,
+            "fp_hall": 2,
+            "details": [
+              {
+                "obj": "사람전체",
+                "ok_pos": true
+              },
+              {
+                "obj": "머리",
+                "ok_pos": true
+              },
+              {
+                "obj": "얼굴",
+                "ok_pos": true
+              },
+              {
+                "obj": "눈",
+                "ok_pos": true
+              },
+              {
+                "obj": "코",
+                "ok_pos": true
+              },
+              {
+                "obj": "입",
+                "ok_pos": true
+              },
+              {
+                "obj": "귀",
+                "ok_pos": true
+              },
+              {
+                "obj": "머리카락",
+                "ok_pos": true
+              },
+              {
+                "obj": "목",
+                "ok_pos": false,
+                "vlm": "middle-center",
+                "gt": [
+                  "top-center"
+                ]
+              },
+              {
+                "obj": "상체",
+                "ok_pos": true
+              },
+              {
+                "obj": "팔",
+                "ok_pos": true
+              },
+              {
+                "obj": "손",
+                "ok_pos": true
+              },
+              {
+                "obj": "다리",
+                "ok_pos": true
+              },
+              {
+                "obj": "발",
+                "ok_pos": true
+              },
+              {
+                "obj": "단추",
+                "ok_pos": true
+              },
+              {
+                "obj": "주머니",
+                "ok_pos": true
+              },
+              {
+                "obj": "운동화",
+                "ok_pos": true
+              },
+              {
+                "obj": "여자구두",
+                "missed": true
+              },
+              {
+                "obj": "바지",
+                "halluc": true
+              },
+              {
+                "obj": "끈",
+                "halluc": true
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
