@@ -21,24 +21,24 @@ import os, json, base64, time, re
 from datetime import datetime
 from collections import Counter, defaultdict
 from openai import OpenAI
+from project_paths import IMAGE_DIR, LABEL_DIR, ensure_output_dir, get_openrouter_api_key
 
-PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
-with open(os.path.join(PROJECT_DIR, "config.json")) as f:
-    config = json.load(f)
+client = None
 
-client = OpenAI(
-    api_key=config.get("OPENROUTER_API_KEY", ""),
-    base_url="https://openrouter.ai/api/v1",
-)
+
+def get_client():
+    """Create the API client only when an API experiment is actually run."""
+    global client
+    if client is None:
+        client = OpenAI(
+            api_key=get_openrouter_api_key(),
+            base_url="https://openrouter.ai/api/v1",
+        )
+    return client
 
 # ---------- 설정 ----------
-DATASET_ROOT = os.path.join(
-    PROJECT_DIR,
-    "266.AI 기반 아동 미술심리 진단을 위한 그림 데이터 구축",
-    "01-1.정식개방데이터",
-)
-TRAIN_ORIGIN = os.path.join(DATASET_ROOT, "Training", "01.원천데이터")
-TRAIN_LABEL = os.path.join(DATASET_ROOT, "Training", "02.라벨링데이터")
+TRAIN_ORIGIN = str(IMAGE_DIR)
+TRAIN_LABEL = str(LABEL_DIR)
 CAT_MAP = {
     "TL_나무": "TS_나무", "TL_남자사람": "TS_남자사람",
     "TL_여자사람": "TS_여자사람", "TL_집": "TS_집",
@@ -385,7 +385,7 @@ def call_vlm(model_id, prompt, image_path=None, temperature=0.2, max_tokens=MAX_
 
     for attempt in range(retries):
         try:
-            resp = client.chat.completions.create(
+            resp = get_client().chat.completions.create(
                 model=model_id,
                 messages=messages,
                 temperature=temperature,
@@ -506,8 +506,9 @@ def main():
     import sys
     suffix = sys.argv[1] if len(sys.argv) > 1 else ""
     suf = f"_{suffix}" if suffix else ""
-    out_path = f"./v6_state_4{suf}.json"
-    log_path = f"./v6_state_4{suf}.log"
+    output_dir = ensure_output_dir()
+    out_path = output_dir / f"v6_state_4{suf}.json"
+    log_path = output_dir / f"v6_state_4{suf}.log"
 
     print(f"=== HTP v6 — Voting + Debate + Judge (C 버전) 4장 ===")
     print(f"시작: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")

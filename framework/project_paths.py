@@ -36,3 +36,16 @@ def get_openrouter_api_key() -> str:
             "config.json에 입력하세요."
         )
     return key
+
+
+def load_api_config() -> dict[str, str]:
+    """Load optional provider keys from environment variables and config.json."""
+    config: dict[str, str] = {}
+    config_path = REPO_ROOT / "config.json"
+    if config_path.exists():
+        with config_path.open(encoding="utf-8") as f:
+            config.update({k: str(v) for k, v in json.load(f).items()})
+    for name in ("OPENROUTER_API_KEY", "GOOGLE_API_KEY", "OPENAI_API_KEY", "GROK_API_KEY"):
+        if os.environ.get(name):
+            config[name] = os.environ[name]
+    return config

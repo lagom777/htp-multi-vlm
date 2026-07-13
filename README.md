@@ -21,7 +21,7 @@
 
 - 프레임워크 효과(최고 성능 단독 모델 대비): 저사양 로컬 **+3.0%p** · 고사양 로컬 **+3.0%p** · 상용 API +0.1%p — 단독 모델이 약하고 불안정한 로컬 환경일수록 이득이 큼
 - 그림별 최저 F1은 세 환경 모두에서 어느 단독 모델보다 높음 (worst-case 개선)
-- 채점: 정답 항목은 AI Hub GT 라벨과 대조, 라벨 밖 보고는 연구자가 원본 그림과 직접 대조하여 실재 여부를 판정 (고사양 로컬·상용 API 전량 검증)
+- 채점: 정답 항목은 AI Hub 정답 라벨과 대조하고, 정답 라벨에 없는 보고는 원본 그림과 직접 대조하여 실제로 그려졌는지 판정
 
 ## 저장소 구성
 
@@ -34,6 +34,7 @@ framework/    핵심 파이프라인
   plans_v5.py              카테고리별 50항목 체크리스트 (정답·준정답·교란)
   eval_9region.py          9-구역 위치 평가
   test_64_files.py         평가 표본 64장 목록
+  project_paths.py         데이터·결과·설정 경로 관리
   common_utils.py / g_prime.py / en_to_kr.py / clean_prompts_v2.py  유틸
 experiments/  설계 탐색·구성요소 비교 실험 (투표 임계값, 토의(debate), SAM2/탐지-먼저, 타일 분할 등)
 results/      측정 결과 JSON (그림별 R1 응답·투표·재검증·채점 전체 기록)
@@ -44,18 +45,19 @@ results/      측정 결과 JSON (그림별 R1 응답·투표·재검증·채점
   v6_ablation_results.json 토의 단계 비교 실험
   plans_v5_data.json       체크리스트 데이터
   reference_v60.json       최종 확정 지표 재계산 값
+outputs/      새 실행 결과가 저장되는 폴더(실행 시 자동 생성, Git 제외)
 ```
 
 ## 실행 방법
 
-1. **데이터**: [AI Hub 266 「AI 기반 아동 미술심리 진단을 위한 그림 데이터 구축」](https://aihub.or.kr/)에서 데이터셋을 직접 내려받은 뒤, 저장소 루트의 `data/` 아래에 원본 폴더 구조 그대로 배치하세요 (`data/01.원천데이터/TL_집/...`, `data/02.라벨링데이터/TS_집/...`). 다른 위치를 쓰려면 환경변수 `HTP266_IMG_DIR`·`HTP266_LBL_DIR`로 지정할 수 있습니다. **데이터셋의 이미지·라벨은 AI Hub 이용약관에 따라 이 저장소에 포함되어 있지 않습니다(재배포 불가).**
-2. **API 키**: 저장소 루트에 `config.json`을 만들고 `{"OPENROUTER_API_KEY": "..."}` 형식으로 키를 넣으세요 (`.gitignore`에 포함되어 커밋되지 않음). 로컬 모델은 vLLM 서빙 엔드포인트를 사용합니다.
+1. **데이터**: [AI Hub 266 「AI 기반 아동 미술심리 진단을 위한 그림 데이터 구축」](https://aihub.or.kr/)에서 데이터셋을 직접 내려받은 뒤, 저장소 루트의 `data/` 아래에 배치하세요 (`data/01.원천데이터/TS_집/...`, `data/02.라벨링데이터/TL_집/...`). 다른 위치를 쓰려면 환경변수 `HTP266_IMG_DIR`·`HTP266_LBL_DIR`로 지정할 수 있습니다. **데이터셋의 이미지·라벨은 AI Hub 이용약관에 따라 이 저장소에 포함되어 있지 않습니다(재배포 불가).**
+2. **API 키**: `config.example.json`을 `config.json`으로 복사한 뒤 OpenRouter 키를 입력하거나, 환경변수 `OPENROUTER_API_KEY`를 설정하세요. 일부 비교 실험은 같은 파일의 Google·OpenAI·Grok 키를 추가로 사용합니다. `config.json`은 Git에서 제외됩니다. 로컬 모델은 vLLM 서빙 엔드포인트를 사용합니다.
 3. **실행** (저장소 루트에서):
    ```bash
    pip install -r requirements.txt
    python framework/test64_v5.py
    ```
-   결과 JSON·로그는 실행한 디렉터리에 생성됩니다.
+   새 결과 JSON·로그는 기본적으로 `outputs/`에 생성됩니다. 저장 위치는 환경변수 `HTP_OUTPUT_DIR`로 바꿀 수 있습니다.
 
 ## 인용
 

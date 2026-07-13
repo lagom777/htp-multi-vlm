@@ -10,12 +10,12 @@ import os, json, time, sys
 from openai import OpenAI
 import google.generativeai as genai
 
-PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
-with open(os.path.join(PROJECT_DIR, "config.json"), 'r') as f:
-    config = json.load(f)
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'framework'))
+from project_paths import load_api_config
+
+config = load_api_config()
 genai.configure(api_key=config.get("GOOGLE_API_KEY", ""))
 
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'framework'))
 from judge_ablation import normalize, match, build_judge_prompt, parse_final, call_judge, JUDGES
 
 STATE_FILE = "v3_state_nocheck_12.json"

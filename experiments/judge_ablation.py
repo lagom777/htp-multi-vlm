@@ -3,13 +3,14 @@
 실행: python3 judge_ablation.py
 결과: csv/judge_ablation_results.csv
 """
-import os, json, time
+import os, json, time, sys
 from openai import OpenAI
 import google.generativeai as genai
 
-PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
-with open(os.path.join(PROJECT_DIR, "config.json"), 'r') as f:
-    config = json.load(f)
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'framework'))
+from project_paths import load_api_config
+
+config = load_api_config()
 
 genai.configure(api_key=config.get("GOOGLE_API_KEY", ""))
 gpt_client = OpenAI(api_key=config.get("OPENAI_API_KEY", ""))

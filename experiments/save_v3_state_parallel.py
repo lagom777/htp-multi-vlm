@@ -11,18 +11,19 @@ from transformers import AutoProcessor, AutoModelForZeroShotObjectDetection
 import google.generativeai as genai
 from openai import OpenAI
 
-PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
-with open(os.path.join(PROJECT_DIR, "config.json"), 'r') as f:
-    config = json.load(f)
+import sys
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'framework'))
+from project_paths import IMAGE_DIR, LABEL_DIR, load_api_config
+
+config = load_api_config()
 
 genai.configure(api_key=config.get("GOOGLE_API_KEY", ""))
 gpt_client = OpenAI(api_key=config.get("OPENAI_API_KEY", ""))
 grok_client = OpenAI(api_key=config.get("GROK_API_KEY", ""), base_url="https://api.x.ai/v1")
 openrouter_client = OpenAI(api_key=config.get("OPENROUTER_API_KEY", ""), base_url="https://openrouter.ai/api/v1")
 
-DATASET_ROOT = os.path.join(PROJECT_DIR, "266.AI 기반 아동 미술심리 진단을 위한 그림 데이터 구축", "01-1.정식개방데이터")
-TRAIN_ORIGIN = os.path.join(DATASET_ROOT, "Training", "01.원천데이터")
-TRAIN_LABEL = os.path.join(DATASET_ROOT, "Training", "02.라벨링데이터")
+TRAIN_ORIGIN = str(IMAGE_DIR)
+TRAIN_LABEL = str(LABEL_DIR)
 CAT_MAP = {"TL_나무": "TS_나무", "TL_남자사람": "TS_남자사람", "TL_여자사람": "TS_여자사람", "TL_집": "TS_집"}
 
 SYNONYMS = {

@@ -11,7 +11,7 @@ import os, json, base64, time, unicodedata, re, sys
 from datetime import datetime
 from collections import Counter, defaultdict
 from openai import OpenAI
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from project_paths import IMAGE_DIR, LABEL_DIR, ensure_output_dir
 import v6_voting_debate_4 as v6m
 from common_utils import parse_json_v2, get_bbox_prompt
 import english_prompts as enp
@@ -58,8 +58,8 @@ TEST_IMAGES_FULL = [
     ("TL_여자사람", "여자사람_11_여_00001.jpg"),
     ("TL_여자사람", "여자사람_13_남_00009.jpg"),
 ]
-BASE_IMG = "./data/01.원천데이터"
-BASE_LBL = "./data/02.라벨링데이터"
+BASE_IMG = str(IMAGE_DIR)
+BASE_LBL = str(LABEL_DIR)
 TS_MAP = {"TL_나무":"TS_나무","TL_집":"TS_집","TL_남자사람":"TS_남자사람","TL_여자사람":"TS_여자사람"}
 
 
@@ -246,7 +246,7 @@ def main():
         results.append({"cat":cat,"img":img,"gt_n":gt_n,
                         "bbox_outs":bbox_outs,"merged":merged,
                         "judge":j_parsed,"final":final,"eval":ev})
-        with open(f"./gprime_orch-{ORCH}_{len(TEST_IMAGES)}img.json","w",encoding="utf-8") as f:
+        with open(ensure_output_dir() / f"gprime_orch-{ORCH}_{len(TEST_IMAGES)}img.json","w",encoding="utf-8") as f:
             json.dump(results, f, ensure_ascii=False, indent=2)
 
     tot = Counter()
